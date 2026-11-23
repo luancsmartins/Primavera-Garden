@@ -1,0 +1,1654 @@
+<title>Primavera Garden</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Primavera Garden, MRV em Duque de Caxias: plantas, andares, sol e disponibilidade.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap">
+<style>
+/* Primavera Garden · Hotz Brokers
+   Layout: abertura cinematográfica com a portaria em tela cheia, depois bandas que alternam branco e
+   prata em degradê, fechando em preto no contato e no rodapé. Tipografia de duas vozes: grotesca em
+   negrito para afirmar, serifada em itálico para a palavra que carrega o desejo. Dourado da Hotz só
+   em ação. Página clara por escolha do cliente: tokens fixos, sem variante escura. */
+:root{
+  --papel:#FFFFFF;
+  --prata-1:#F6F7F8;
+  --prata-2:#ECEEF0;
+  --prata-3:#DCDFE3;
+  --prata-4:#C3C7CC;
+  --linha:#E2E5E8;
+  --linha-forte:#CBD0D5;
+  --tinta:#0B0C0D;
+  --carvao:#16181A;
+  --grafite:#5A6066;
+  --grafite-claro:#8A9199;
+  --ouro:#B2904F;
+  --ouro-luz:#E7D3A6;
+  --ouro-fundo:#F7F1E4;
+  --prata-grad:linear-gradient(160deg,#FFFFFF 0%,#F2F4F6 42%,#E6E9EC 100%);
+  --prata-grad-forte:linear-gradient(160deg,#F4F6F7 0%,#E4E7EA 50%,#D6DADE 100%);
+  --preto-grad:linear-gradient(160deg,#17191B 0%,#0D0E10 60%,#08090A 100%);
+  --ouro-grad:linear-gradient(135deg,#C9A866 0%,#B2904F 52%,#9A7B3E 100%);
+  --f-tit:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --f-ser:'Instrument Serif',Georgia,'Times New Roman',serif;
+  --f-txt:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --r:10px;
+  color-scheme:light;
+}
+
+*{box-sizing:border-box}
+body{background:var(--papel);color:var(--tinta);font-family:var(--f-txt);font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:var(--tinta)}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--ouro);outline-offset:3px;border-radius:3px}
+
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+section{padding-block:clamp(62px,8vw,118px)}
+.band-prata{background:var(--prata-grad);border-block:1px solid var(--linha)}
+.band-preta{background:var(--preto-grad);color:#F2F3F4}
+.band-preta .eyebrow{color:var(--ouro-luz)}
+.band-preta .lead,.band-preta p{color:#A7ADB3}
+.band-preta .rule{background:var(--ouro)}
+.band-preta h2,.band-preta h3{color:#FFF}
+
+h1,h2,h3,h4{font-family:var(--f-tit);font-weight:700;letter-spacing:-.032em;text-wrap:balance;margin:0;line-height:1.04}
+h1{font-size:clamp(2.5rem,5.6vw,4.4rem);letter-spacing:-.038em}
+h2{font-size:clamp(1.95rem,3.9vw,3rem)}
+h3{font-size:clamp(1.35rem,2.1vw,1.8rem);letter-spacing:-.026em}
+h4{font-size:1.18rem;line-height:1.16;letter-spacing:-.022em}
+p{margin:0}
+.it{font-family:var(--f-ser);font-style:italic;font-weight:400;letter-spacing:-.01em}
+h1 .it{font-size:1.06em}
+.eyebrow{font-family:var(--f-txt);font-size:.72rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--grafite);margin:0}
+.lead{font-size:clamp(1.04rem,1.5vw,1.2rem);color:var(--grafite);max-width:58ch}
+.sec-head{display:grid;gap:14px;max-width:780px;margin-bottom:clamp(30px,4vw,50px)}
+.sec-head p{color:var(--grafite);max-width:62ch}
+.rule{width:52px;height:2px;background:var(--ouro)}
+.note{font-size:.84rem;color:var(--grafite);line-height:1.5}
+.band-preta .note{color:#868D94}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:4px;background:var(--ouro-grad);color:#191407;font-weight:600;font-size:.98rem;letter-spacing:.01em;text-decoration:none;border:0;cursor:pointer;transition:filter .2s ease,transform .15s ease}
+.btn:hover{filter:brightness(1.07);transform:translateY(-1px)}
+.btn.escuro{background:var(--tinta);color:#fff}
+.btn.escuro:hover{filter:brightness(1.4)}
+.btn.ghost{background:transparent;color:var(--tinta);border:1px solid var(--linha-forte)}
+.btn.ghost:hover{background:var(--prata-2);filter:none}
+.band-preta .btn.ghost,.hero .btn.ghost{color:#fff;border-color:rgba(255,255,255,.4)}
+.band-preta .btn.ghost:hover,.hero .btn.ghost:hover{background:rgba(255,255,255,.1)}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* barra */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--linha)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:31;background:#fff}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.bar .brand{display:flex;align-items:center;gap:16px;min-width:0}
+.bar .brand img{height:30px;width:auto}
+.bar .prod{font-family:var(--f-ser);font-style:italic;font-size:1.1rem;color:var(--grafite);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar .btn{min-height:44px;padding:0 20px;font-size:.92rem}
+@media (max-width:640px){.bar .prod{display:none}.bar .btn span.long{display:none}}
+
+/* hero */
+.hero{position:relative;padding:0;background:#0B0C0D;overflow:hidden}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:2% 50%}
+@media (max-width:860px){.hero-img{object-position:40% 50%}.hero-in{min-height:clamp(540px,86vh,820px)}}
+.hero-scrim{position:absolute;inset:0;background:radial-gradient(125% 115% at 0% 100%,rgba(6,7,8,.95) 0%,rgba(6,7,8,.9) 26%,rgba(6,7,8,.66) 44%,rgba(6,7,8,.24) 66%,rgba(6,7,8,0) 86%)}
+.hero-scrim::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(6,7,8,.62) 0%,rgba(6,7,8,.12) 34%,transparent 58%)}
+@media (max-width:860px){.hero-scrim{background:linear-gradient(0deg,rgba(6,7,8,.95) 0%,rgba(6,7,8,.9) 44%,rgba(6,7,8,.52) 74%,rgba(6,7,8,.42) 100%)}.hero-scrim::after{display:none}}
+.hero-in{position:relative;display:grid;align-content:end;gap:20px;min-height:clamp(470px,80vh,780px);padding-block:clamp(56px,8vw,88px);color:#fff;max-width:720px}
+.hero-nome{display:grid;gap:11px;margin-bottom:4px;justify-items:start}
+.hero-nome i{display:block;width:40px;height:1px;background:var(--ouro)}
+.hero-nome b{font-family:var(--f-tit);font-weight:600;font-size:clamp(.74rem,1.1vw,.86rem);letter-spacing:.4em;text-transform:uppercase;color:var(--ouro-luz);text-indent:.4em;line-height:1.2}
+.hero-nome em{font-style:normal;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.58);line-height:1.3}
+.hero-in .eyebrow{color:var(--ouro-luz)}
+.hero-in h1{color:#fff}
+.hero-in .lead{color:#D6DADE;max-width:52ch}
+.hero-in .cta-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:4px}
+.hero-in .pv{width:72px;height:auto;border-radius:10px}
+.hero-sel{position:absolute;right:max(16px,env(safe-area-inset-right,0px));bottom:14px;font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.62)}
+.facts{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:1px solid var(--linha)}
+.facts li{padding:24px 20px 26px;border-left:1px solid var(--linha);display:grid;gap:6px;min-width:0}
+.facts li:first-child{border-left:0;padding-left:0}
+.facts .k{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--grafite-claro);font-weight:600}
+.facts .v{font-family:var(--f-tit);font-weight:700;font-size:1.26rem;line-height:1.14;letter-spacing:-.024em}
+.facts-wrap{padding-block:0 clamp(44px,6vw,72px)}
+@media (max-width:900px){
+  .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .facts li{border-left:0;border-top:1px solid var(--linha);padding-left:0}
+  .facts li:nth-child(-n+2){border-top:0}
+  .facts li:nth-child(even){padding-left:18px;border-left:1px solid var(--linha)}
+  .facts li:last-child{grid-column:1/-1;padding-left:0;border-left:0}
+}
+
+/* elevador */
+.elev{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(0,1fr);gap:clamp(24px,4vw,46px);align-items:start}
+.tower-real{position:relative;margin:0;border-radius:6px;overflow:hidden;aspect-ratio:1630/970;background:#E6EEF3;border:1px solid var(--linha)}
+.tower-real svg{display:block;width:100%;height:100%}
+.tower-real .hit{fill:transparent;cursor:pointer}
+.tower-real .hit:hover{fill:#FFD98A;fill-opacity:.2}
+.tower-real .ill{position:absolute;right:12px;bottom:12px;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:rgba(8,9,10,.5);padding:5px 10px;border-radius:3px}
+.tower-real .pick-hint{position:absolute;left:12px;bottom:12px;font-size:.74rem;color:var(--tinta);background:rgba(255,255,255,.92);padding:6px 12px;border-radius:3px}
+@media (max-width:620px){.tower-real{aspect-ratio:1/1}}
+.floor-tag{position:absolute;top:14px;left:14px;font-family:var(--f-tit);font-weight:700;font-size:1.04rem;letter-spacing:-.02em;background:var(--tinta);color:#fff;padding:8px 15px;border-radius:3px}
+.tw-light{transition:transform 1.3s cubic-bezier(.65,0,.35,1)}
+.tw-range{transition:opacity .6s ease .7s;mix-blend-mode:multiply}
+
+.picker{display:grid;gap:12px;min-width:0}
+.picker #enter{justify-self:start;margin-top:4px}
+.opt{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 14px;text-align:left;padding:18px 20px;border:1px solid var(--linha);border-radius:5px;background:var(--papel);cursor:pointer;transition:border-color .2s,background .2s,box-shadow .2s}
+.opt:hover{border-color:var(--linha-forte)}
+.opt[aria-pressed="true"]{border-color:var(--tinta);background:var(--prata-grad);box-shadow:inset 3px 0 0 var(--ouro)}
+.opt .dot{grid-row:1/3;width:18px;height:18px;border-radius:50%;border:1px solid var(--linha-forte);margin-top:5px;background:#fff;transition:all .2s}
+.opt[aria-pressed="true"] .dot{border-color:var(--ouro);background:radial-gradient(circle,var(--ouro) 0 5px,#fff 6px)}
+.opt .t{font-family:var(--f-tit);font-weight:700;font-size:1.18rem;line-height:1.16;letter-spacing:-.024em}
+.opt .d{color:var(--grafite);font-size:.92rem}
+
+.andar-box{display:grid;gap:10px;margin-top:4px}
+.andar-box .lbl{font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--grafite-claro)}
+.andares{display:grid;grid-template-columns:repeat(auto-fill,minmax(46px,1fr));gap:6px}
+.andares button{min-height:48px;border-radius:4px;border:1px solid var(--linha);background:var(--papel);cursor:pointer;font-weight:600;font-variant-numeric:tabular-nums;transition:all .15s;display:grid;justify-items:center;align-content:center;gap:3px;line-height:1}
+.andares button:hover:not(:disabled){border-color:var(--tinta)}
+.andares button[aria-pressed="true"]{background:var(--tinta);border-color:var(--tinta);color:#fff}
+.andares button:disabled{opacity:.3;cursor:not-allowed}
+.andares .pip{width:5px;height:5px;border-radius:50%;background:transparent}
+.andares button.has .pip{background:var(--ouro)}
+.andares button[aria-pressed="true"].has .pip{background:var(--ouro-luz)}
+.torres{display:flex;gap:8px;flex-wrap:wrap}
+.torres button{min-height:46px;padding:0 18px;border-radius:4px;border:1px solid var(--linha);background:var(--papel);cursor:pointer;font-weight:600;display:inline-flex;align-items:center;gap:10px}
+.torres button:hover{border-color:var(--tinta)}
+.torres button[aria-pressed="true"]{background:var(--tinta);border-color:var(--tinta);color:#fff}
+.torres .ct{font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--prata-2);color:var(--grafite);font-variant-numeric:tabular-nums}
+.torres button[aria-pressed="true"] .ct{background:rgba(255,255,255,.16);color:#fff}
+
+/* disponibilidade */
+.disp{margin-top:20px;border:1px solid var(--linha);border-radius:6px;overflow:hidden;background:var(--papel)}
+.disp .top{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 16px;padding:18px 22px;background:var(--preto-grad);color:#fff}
+.disp .top .w{font-family:var(--f-tit);font-weight:700;font-size:1.2rem;letter-spacing:-.026em}
+.disp .top .s{font-family:var(--f-ser);font-style:italic;font-size:1.02rem;color:var(--ouro-luz)}
+.disp .body{padding:20px 22px 22px;display:grid;gap:14px}
+.disp .resumo{font-family:var(--f-tit);font-weight:700;font-size:1.1rem;letter-spacing:-.024em}
+.unidades{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(244px,1fr));gap:10px}
+.unidades li{display:grid;gap:3px;padding:14px 16px;border-radius:5px;border:1px solid var(--linha);background:var(--prata-grad);min-width:0;box-shadow:inset 2px 0 0 var(--ouro)}
+.u-top{display:flex;align-items:center;gap:9px}
+.unidades .n{font-family:var(--f-tit);font-weight:700;font-size:1.16rem;letter-spacing:-.024em;font-variant-numeric:tabular-nums}
+.unidades .st{margin-left:auto;font-size:.66rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ouro)}
+.unidades .desc{font-size:.86rem;color:var(--grafite);line-height:1.42}
+.pt{width:8px;height:8px;border-radius:50%;flex:none}
+.pt.d{background:var(--ouro)}
+.disp .indisp{font-size:.86rem;color:var(--grafite-claro);line-height:1.5;font-variant-numeric:tabular-nums}
+.disp .btn{justify-self:start}
+
+.tour{margin-top:clamp(30px,4vw,48px);display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:clamp(20px,3vw,36px);align-items:start}
+.stage{position:relative;aspect-ratio:16/9;border-radius:6px;overflow:hidden;background:#0B0C0D;max-width:100%}
+.stage .layer{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#0B0C0D;opacity:0;transition:opacity .45s ease}
+.stage .layer.on{opacity:1}
+.stage .vtour{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .35s ease;z-index:1;pointer-events:none}
+.stage .vtour.on{opacity:1}
+.stage .cap,.stage .ill{z-index:3}
+.stage .cap{position:absolute;left:0;right:0;bottom:0;padding:56px 22px 20px;background:linear-gradient(transparent,rgba(6,7,8,.86));color:#fff;display:grid;gap:4px}
+.stage .cap .n{font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ouro-luz);font-weight:600}
+.stage .cap .t{font-family:var(--f-ser);font-style:italic;font-weight:400;font-size:clamp(1.5rem,2.9vw,2.1rem);line-height:1.06;letter-spacing:-.01em}
+.stage .cap .d{font-size:.92rem;color:#C9CDD2;max-width:52ch}
+.stage .pl-play{position:absolute;inset:0;z-index:2;display:grid;place-items:center;align-content:center;gap:14px;border:0;padding:0;background:rgba(6,7,8,.3);cursor:pointer;color:#fff;transition:background .25s}
+.stage .pl-play:hover{background:rgba(6,7,8,.42)}
+.stage .pl-play i{width:72px;height:72px;border-radius:50%;background:rgba(255,255,255,.94);display:grid;place-items:center;transition:transform .2s}
+.stage .pl-play:hover i{transform:scale(1.06)}
+.stage .pl-play svg{width:26px;height:26px;margin-left:4px;fill:#0B0C0D}
+.stage .pl-play span{font-size:.74rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;text-shadow:0 1px 10px rgba(0,0,0,.5)}
+@media (max-width:520px){.stage .pl-play i{width:58px;height:58px}.stage .pl-play span{font-size:.66rem;letter-spacing:.14em;padding-inline:24px;text-align:center}}
+.stage .ill{position:absolute;top:12px;right:12px;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.42);padding:5px 10px;border-radius:3px}
+.stage-ctl{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px}
+.dots{display:flex;gap:6px}
+.dots span{width:26px;height:2px;background:var(--linha-forte);transition:background .3s}
+.dots span.on{background:var(--ouro)}
+.ctl-btns{display:flex;gap:8px}
+.ctl-btns button{width:46px;height:46px;border-radius:50%;border:1px solid var(--linha);background:var(--papel);cursor:pointer;display:grid;place-items:center}
+.ctl-btns button:hover{border-color:var(--tinta)}
+.ctl-btns svg{width:18px;height:18px}
+.plan{display:grid;gap:12px;min-width:0;align-content:start}
+.plan .lbl{font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--grafite-claro)}
+.plan .btn{justify-self:start;margin-top:4px}
+.acab{list-style:none;margin:2px 0 0;padding:0;display:grid;gap:9px}
+.acab li{display:grid;grid-template-columns:14px minmax(0,1fr);gap:11px;font-size:.92rem;color:var(--grafite)}
+.acab li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--ouro);margin-top:9px}
+@media (max-width:980px){.elev{grid-template-columns:1fr}.tour{grid-template-columns:1fr}}
+
+/* todas as plantas */
+.plantas{margin-top:clamp(46px,6vw,78px);display:grid;gap:20px}
+.plantas .head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 20px}
+.pl-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.pl{position:relative;border:1px solid var(--linha);border-radius:6px;background:var(--papel);display:grid;grid-template-rows:auto 1fr;overflow:hidden;transition:border-color .25s,box-shadow .25s}
+.pl.sel{border-color:var(--tinta);box-shadow:inset 0 3px 0 var(--ouro)}
+.pl .badge{position:absolute;top:14px;left:14px;font-size:.64rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;background:var(--tinta);color:var(--ouro-luz);padding:7px 12px;border-radius:3px;opacity:0;transition:opacity .25s}
+.pl.sel .badge{opacity:1}
+.pl-img{position:relative;display:block;aspect-ratio:4/3;padding:0;border:0;border-bottom:1px solid var(--linha);background:var(--papel);cursor:zoom-in;width:100%}
+.pl-img img{position:absolute;left:16px;top:16px;width:calc(100% - 32px);height:calc(100% - 32px);object-fit:contain}
+.pl-body{padding:18px 22px 22px;display:grid;gap:5px;align-content:start}
+.pl-body .eyebrow{font-size:.66rem}
+.pl-body .ref{font-size:.88rem;color:var(--grafite)}
+.pl details{margin-top:10px;border-top:1px solid var(--linha);padding-top:12px}
+.pl summary{cursor:pointer;font-weight:600;font-size:.9rem;min-height:34px;display:flex;align-items:center;color:var(--tinta)}
+.leg{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:7px;counter-reset:leg}
+.leg li{counter-increment:leg;display:grid;grid-template-columns:22px minmax(0,1fr);gap:10px;font-size:.86rem;color:var(--grafite);line-height:1.45}
+.leg li::before{content:counter(leg);width:21px;height:21px;border-radius:50%;background:var(--prata-2);color:var(--grafite);font-size:.68rem;font-weight:700;display:grid;place-items:center;margin-top:1px}
+@media (max-width:760px){.pl-grid{grid-template-columns:1fr}}
+.zoom{border:0;padding:0;width:min(1200px,96vw);max-height:94vh;border-radius:6px;background:var(--papel);color:var(--tinta)}
+.zoom::backdrop{background:rgba(8,9,10,.82)}
+.zoom .zbar{position:sticky;top:0;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 20px;background:var(--papel);border-bottom:1px solid var(--linha);z-index:1}
+.zoom .zbar span{font-family:var(--f-tit);font-weight:700;font-size:1.06rem;letter-spacing:-.024em}
+.zoom .zbar button{min-height:42px;padding:0 18px;border-radius:4px;border:1px solid var(--linha-forte);background:var(--papel);cursor:pointer}
+.zoom .zsc{overflow:auto;max-height:calc(94vh - 68px);-webkit-overflow-scrolling:touch}
+.zoom .zsc img{width:max(100%,860px);max-width:none;height:auto;margin:0 auto}
+
+/* apartamento pronto */
+.pronto{display:grid;grid-template-columns:minmax(0,.62fr) minmax(0,1fr);gap:clamp(22px,4vw,52px);align-items:start}
+.pronto .pv{position:relative;margin:0;border-radius:6px;overflow:hidden;background:#0B0C0D;max-width:420px}
+.pronto .pv video{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;background:#0B0C0D}
+.pronto .pv .tag{left:auto;right:14px;top:14px;bottom:auto}
+.caps{display:grid;gap:14px;align-content:start;min-width:0}
+.caps .lbl{font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--grafite-claro)}
+.cap-list{display:grid;gap:8px}
+.cap-list button{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:14px;text-align:left;min-height:56px;padding:0 18px;border:1px solid var(--linha);border-radius:5px;background:var(--papel);cursor:pointer;transition:border-color .2s,background .2s}
+.cap-list button:hover{border-color:var(--linha-forte);background:var(--prata-1)}
+.cap-list button[aria-current="true"]{border-color:var(--tinta);background:var(--prata-grad);box-shadow:inset 3px 0 0 var(--ouro)}
+.cap-list .i{width:26px;height:26px;border-radius:50%;border:1px solid var(--linha-forte);display:grid;place-items:center;font-size:.72rem;font-weight:700;color:var(--grafite);font-variant-numeric:tabular-nums}
+.cap-list button[aria-current="true"] .i{border-color:var(--ouro);background:var(--ouro);color:#191407}
+.cap-list .t{font-weight:600;letter-spacing:-.014em}
+.cap-list .s{font-size:.82rem;color:var(--grafite-claro);font-variant-numeric:tabular-nums}
+@media (max-width:860px){.pronto{grid-template-columns:1fr}.pronto .pv{max-width:none;justify-self:center;width:min(100%,380px)}}
+
+/* sol */
+.sun{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:clamp(20px,3vw,36px);align-items:start}
+.sun-view{position:relative;border-radius:6px;overflow:hidden;background:linear-gradient(180deg,#A9C7DE 0%,#DCE8F0 58%,#EEF2F2 100%);height:clamp(370px,50vw,560px);border:1px solid var(--linha);transition:background .6s ease}
+.sun-view canvas{display:block;width:100%;height:100%;touch-action:none}
+.sun-hint{position:absolute;left:12px;bottom:12px;font-size:.74rem;color:var(--tinta);background:rgba(255,255,255,.9);padding:6px 12px;border-radius:3px}
+.sun-load{position:absolute;inset:auto 0 50% 0;text-align:center;font-size:.86rem;color:var(--grafite);transition:opacity .4s}
+.sun-load.done{opacity:0;pointer-events:none}
+.sun-fallback{position:absolute;inset:0;display:grid;place-items:center;padding:24px;text-align:center;color:var(--grafite)}
+.ctl{display:grid;gap:18px;min-width:0}
+.ctl .grp{display:grid;gap:8px}
+.ctl label,.ctl .lbl{font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--grafite-claro)}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button{min-height:44px;padding:0 16px;border-radius:4px;border:1px solid var(--linha);background:var(--papel);cursor:pointer;font-size:.92rem}
+.seg button:hover{border-color:var(--tinta)}
+.seg button[aria-pressed="true"]{background:var(--tinta);color:#fff;border-color:var(--tinta)}
+.range-row{display:flex;align-items:center;gap:14px}
+.range-row input{flex:1;min-width:0;accent-color:var(--ouro)}
+.range-row output{font-family:var(--f-tit);font-weight:700;font-size:1.28rem;min-width:66px;text-align:right;font-variant-numeric:tabular-nums;letter-spacing:-.026em}
+.status{border:1px solid var(--linha);border-left:3px solid var(--ouro);border-radius:0 6px 6px 0;background:var(--prata-grad);padding:18px 22px;display:grid;gap:6px}
+.status .h{font-family:var(--f-tit);font-weight:700;font-size:1.28rem;line-height:1.14;letter-spacing:-.028em}
+.status .s{font-size:.92rem;color:var(--grafite)}
+.status .day{font-size:.92rem}
+@media (max-width:980px){.sun{grid-template-columns:1fr}}
+/* sol em fundo preto */
+.band-preta .sun-view{border-color:#262A2E}
+.band-preta .sun-hint{background:rgba(10,11,12,.72);color:#E6E8EA}
+.band-preta .sun-load{color:#9AA1A8}
+.band-preta .sun-fallback{color:#9AA1A8}
+.band-preta .ctl label,.band-preta .ctl .lbl{color:#7E868D}
+.band-preta .seg button{background:transparent;border-color:#2C3136;color:#E6E8EA}
+.band-preta .seg button:hover{border-color:#5B6168}
+.band-preta .seg button[aria-pressed="true"]{background:#fff;color:var(--tinta);border-color:#fff}
+.band-preta .range-row input{accent-color:var(--ouro)}
+.band-preta .range-row output{color:#fff}
+.band-preta .status{background:rgba(255,255,255,.045);border-color:#262A2E;border-left-color:var(--ouro)}
+.band-preta .status .h{color:#fff}
+.band-preta .status .s,.band-preta .status .day{color:#A7ADB3}
+.escolha{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 16px;padding:14px 18px;border:1px solid #2C3136;border-radius:5px;background:rgba(255,255,255,.045)}
+.escolha span{font-family:var(--f-tit);font-weight:700;font-size:1.08rem;letter-spacing:-.024em;color:#fff}
+.escolha a{margin-left:auto;font-size:.84rem;color:var(--ouro-luz);text-decoration:none;border-bottom:1px solid rgba(231,211,166,.45);padding-bottom:1px}
+.escolha a:hover{border-bottom-color:var(--ouro-luz)}
+
+
+/* lazer */
+.gal{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.gal figure{margin:0;display:grid;gap:10px}
+.gal img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:5px;background:var(--prata-2)}
+.gal figcaption{display:flex;align-items:center;gap:10px;font-weight:600;font-size:.94rem;letter-spacing:-.012em}
+.gal .num{width:22px;height:22px;flex:none;border-radius:50%;border:1px solid var(--ouro);color:var(--ouro);font-size:.68rem;font-weight:700;display:grid;place-items:center;font-variant-numeric:tabular-nums}
+.gal figure.wide{grid-column:span 2}
+.gal figure.wide img{aspect-ratio:16/9}
+@media (max-width:920px){.gal{grid-template-columns:repeat(2,minmax(0,1fr))}.gal figure.wide{grid-column:1/-1}}
+.impl{margin-top:clamp(38px,5vw,62px);display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:clamp(20px,3vw,44px);align-items:start}
+.impl .head{grid-column:1/-1;display:grid;gap:8px;margin-bottom:4px}
+.impl figure{margin:0;background:var(--papel);border:1px solid var(--linha);border-radius:5px;padding:14px}
+.impl figure img{width:100%;height:auto}
+.impl figcaption{font-size:.78rem;letter-spacing:.06em;color:var(--grafite-claro);margin-top:12px}
+.legs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(22px,2.6vw,34px)}
+.legs .g{display:grid;gap:12px;align-content:start;min-width:0}
+.legs h4{font-size:.74rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--grafite-claro)}
+.legs ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.legs li{display:grid;grid-template-columns:26px minmax(0,1fr);gap:11px;align-items:start;font-size:.96rem;line-height:1.38;letter-spacing:-.012em}
+.legs .n{width:25px;height:25px;border-radius:50%;display:grid;place-items:center;font-size:.76rem;font-weight:700;color:#fff;font-variant-numeric:tabular-nums;margin-top:1px}
+.legs .n.lz{background:#D9418C}
+.legs .n.ap{background:#3FA76B}
+.legs .sw{width:25px;height:25px;border-radius:4px;margin-top:1px}
+.legs .sw.priv{background:repeating-linear-gradient(45deg,#F2C200 0 4px,#FFE37A 4px 8px)}
+.legs .tri{width:0;height:0;border-left:11px solid transparent;border-right:11px solid transparent;border-top:13px solid #D9418C;margin:5px 2px 0}
+.legs .tri.ped{border-top-color:#7B3FA0}
+.legs .tri.vei{border-top-color:#F08A1C}
+.legs .full{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(22px,2.6vw,34px);border-top:1px solid var(--linha);padding-top:clamp(20px,2.4vw,28px)}
+@media (max-width:920px){.impl{grid-template-columns:1fr}}
+@media (max-width:560px){.legs{grid-template-columns:1fr}.legs .full{grid-template-columns:1fr}}
+
+/* obra */
+.diag{height:clamp(34px,5vw,76px);background:var(--prata-grad)}
+.diag i{display:block;height:100%;background:#17191B;clip-path:polygon(0 100%,100% 0,100% 100%)}
+#obra{padding-top:clamp(18px,3vw,32px)}
+.obra{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.obra figure{margin:0;position:relative;border-radius:5px;overflow:hidden;aspect-ratio:3/4;background:#1A1C1F}
+.obra img{width:100%;height:100%;object-fit:cover}
+.tag{position:absolute;left:14px;bottom:14px;background:rgba(8,9,10,.72);color:#fff;font-size:.66rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:8px 13px;border-radius:3px}
+@media (max-width:720px){.obra{grid-template-columns:1fr 1fr}.obra figure:first-child{grid-column:1/-1;aspect-ratio:4/3}}
+
+/* local */
+.local{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(20px,3vw,44px);align-items:start}
+.local figure{margin:0}
+.local figure img{width:100%;border-radius:6px}
+.local figcaption{font-size:.78rem;letter-spacing:.06em;color:var(--grafite-claro);margin-top:10px}
+.near{list-style:none;margin:0;padding:0;display:grid}
+.near li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;padding:16px 0;border-bottom:1px solid var(--linha)}
+.near li:first-child{border-top:1px solid var(--linha)}
+.near .k{font-weight:600;letter-spacing:-.012em}
+.near .v{font-family:var(--f-ser);font-style:italic;font-size:1rem;color:var(--ouro);white-space:nowrap}
+.addr{margin-top:22px;display:grid;gap:14px}
+.addr p{font-family:var(--f-tit);font-weight:600;font-size:1.14rem;line-height:1.34;letter-spacing:-.022em}
+@media (max-width:920px){.local{grid-template-columns:1fr}}
+
+/* comprar */
+.preco{margin-bottom:20px;padding:26px 28px;border:1px solid var(--linha);border-left:3px solid var(--ouro);border-radius:6px;background:var(--papel);display:grid;gap:8px;max-width:72ch}
+.preco .v{font-family:var(--f-tit);font-weight:700;font-size:clamp(1.5rem,3.1vw,2.2rem);letter-spacing:-.03em;line-height:1.1}
+.preco .v b{font-weight:700;color:var(--ouro)}
+.preco .note{max-width:66ch}
+.buy{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.buy .c{border:1px solid var(--linha);border-radius:6px;padding:26px 24px;background:var(--papel);display:grid;gap:10px;align-content:start}
+.buy .big{font-family:var(--f-ser);font-style:italic;font-weight:400;font-size:2.3rem;line-height:1;color:var(--ouro)}
+.buy p{color:var(--grafite);font-size:.94rem}
+.legal-box{margin-top:20px;font-size:.84rem;color:var(--grafite);border-left:2px solid var(--linha-forte);padding-left:18px;max-width:80ch}
+@media (max-width:880px){.buy{grid-template-columns:1fr}}
+
+/* contato */
+#contato{border-bottom:1px solid #1E2124}
+.cta{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(24px,4vw,60px);align-items:center}
+.cta .box{display:grid;gap:16px;justify-items:start}
+.cta .num{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.cta .num output{font-family:var(--f-tit);font-weight:700;font-size:1.5rem;user-select:all;font-variant-numeric:tabular-nums;color:#fff;letter-spacing:-.028em}
+.cta .num button{min-height:40px;padding:0 15px;border-radius:4px;border:1px solid rgba(255,255,255,.26);background:transparent;color:#E6E8EA;cursor:pointer;font-size:.84rem}
+@media (max-width:880px){.cta{grid-template-columns:1fr}}
+
+footer{background:var(--tinta);color:#9AA1A8;padding-block:48px 64px}
+footer .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:22px;margin-bottom:28px;padding-bottom:26px;border-bottom:1px solid #1E2124}
+footer .top .who{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+footer .top img.hz{height:42px;width:auto}
+footer .top img.mrv{height:26px;width:auto;background:#fff;padding:7px 11px;border-radius:3px}
+footer .top .s{font-size:.84rem;color:#9AA1A8}
+footer .fine{display:grid;gap:9px;font-size:.76rem;color:#6E757C;line-height:1.56;max-width:110ch}
+
+@media (prefers-reduced-motion:reduce){
+  .tw-light,.tw-range,.stage .layer{transition:none}
+  .btn:hover{transform:none}
+}
+</style>
+
+<header class="bar">
+  <div class="wrap">
+    <div class="brand">
+      <img src="img/logo-hotz-escuro.png" alt="Hotz Brokers">
+      <span class="prod">Primavera Garden</span>
+    </div>
+    <a class="btn wa-link" href="#contato">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/></svg>
+      <span>Falar com corretor<span class="long"> Hotz</span></span>
+    </a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <img class="hero-img" src="img/hero-portaria.jpg" alt="Portaria do Primavera Garden ao entardecer, com as três torres iluminadas ao fundo">
+  <span class="hero-scrim" aria-hidden="true"></span>
+  <div class="wrap">
+    <div class="hero-in">
+      <div class="hero-nome">
+        <i aria-hidden="true"></i>
+        <b>Primavera Garden</b>
+        <em>Jardim Primavera · Duque de Caxias</em>
+      </div>
+      <h1>Do aluguel para <span class="it">a sua chave</span>.</h1>
+      <p class="lead">Apartamentos de 2 quartos com varanda, sem varanda ou com quintal, lazer completo e as condições do Minha Casa Minha Vida, em um condomínio MRV com as torres já de pé.</p>
+      <div class="cta-row">
+        <a class="btn" href="#planta">Escolher minha planta</a>
+        <a class="btn ghost" href="#sol">Ver o sol no meu andar</a>
+      </div>
+    </div>
+  </div>
+  <span class="hero-sel">Imagem ilustrativa</span>
+</section>
+
+<section class="facts-wrap">
+  <div class="wrap">
+    <ul class="facts">
+      <li><span class="k">Quartos</span><span class="v">2 quartos</span></li>
+      <li><span class="k">Área</span><span class="v">35 a 40 m²</span></li>
+      <li><span class="k">Opções</span><span class="v">Com varanda, sem varanda e com quintal</span></li>
+      <li><span class="k">Torres</span><span class="v">3, com 4 elevadores cada</span></li>
+      <li><span class="k">Lazer</span><span class="v">Piscinas e mais 8 espaços</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="planta" class="band-prata">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Escolha sua planta</p>
+      <h2>Escolha a planta, suba até o andar e <span class="it">entre no apartamento</span></h2>
+      <div class="rule"></div>
+      <p>São três jeitos de morar no Primavera Garden. Escolha um, toque no andar para a luz subir e veja a disponibilidade daquele pavimento.</p>
+    </div>
+
+    <div class="elev">
+      <figure class="tower-real">
+        <svg id="tower" viewBox="0 0 1630 970" preserveAspectRatio="xMaxYMid slice" role="img" aria-label="Render das três torres do Primavera Garden com o andar escolhido aceso em uma das torres">
+          <image href="img/torres-mrv.jpg" x="0" y="0" width="1630" height="970"/>
+        </svg>
+        <span class="floor-tag" id="floorTag">9º andar</span>
+        <span class="pick-hint">Toque em um andar</span>
+        <span class="ill">Imagem ilustrativa</span>
+      </figure>
+
+      <div class="picker">
+        <div role="group" aria-label="Tipos de apartamento" style="display:grid;gap:12px">
+          <button class="opt" type="button" data-tipo="terreo" aria-pressed="false">
+            <span class="dot" aria-hidden="true"></span>
+            <span class="t">Térreo com quintal privativo</span>
+            <span class="d">2 quartos no 1º andar, com área externa só sua de 15,08 a 33,65 m²*.</span>
+          </button>
+          <button class="opt" type="button" data-tipo="varanda" aria-pressed="true">
+            <span class="dot" aria-hidden="true"></span>
+            <span class="t">2 quartos com varanda</span>
+            <span class="d">Do 2º ao 17º andar, com 40,12 ou 40,39 m².</span>
+          </button>
+          <button class="opt" type="button" data-tipo="tipo" aria-pressed="false">
+            <span class="dot" aria-hidden="true"></span>
+            <span class="t">2 quartos sem varanda</span>
+            <span class="d">Do 2º ao 17º andar, com 35,36, 40,12 ou 40,39 m².</span>
+          </button>
+        </div>
+
+        <div class="andar-box">
+          <span class="lbl" id="lblTorre">Torre</span>
+          <div class="torres" role="group" aria-labelledby="lblTorre" id="torres">
+            <button type="button" data-t="1" aria-pressed="false">Torre 1</button>
+            <button type="button" data-t="2" aria-pressed="true">Torre 2</button>
+            <button type="button" data-t="3" aria-pressed="false">Torre 3</button>
+          </div>
+        </div>
+
+        <div class="andar-box">
+          <span class="lbl" id="lblAndar">Andar</span>
+          <div class="andares" role="group" aria-labelledby="lblAndar" id="andares"></div>
+        </div>
+
+        <button class="btn" id="enter" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          Entrar no apartamento
+        </button>
+        <p class="note">*Área privativa acessória, com valores aproximados.</p>
+      </div>
+    </div>
+
+    <div class="disp" id="disp">
+      <div class="top">
+        <span class="w" id="dispW">Torre 2 · 9º andar</span>
+        <span class="s" id="dispS">2 quartos com varanda</span>
+      </div>
+      <div class="body" id="dispBody">
+        <div class="ask">
+          <p>Carregando a disponibilidade deste andar.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tour" id="tour">
+      <div>
+        <div class="stage" id="stage" aria-live="polite">
+          <img class="layer a on" src="img/clip1-sala.jpg" alt="Cozinha e sala integradas, imagem ilustrativa">
+          <img class="layer b" alt="">
+          <video class="vtour" id="vTour" muted playsinline preload="auto" aria-hidden="true"></video>
+          <button class="pl-play" id="playTour" type="button">
+            <i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></i>
+            <span>Ver o percurso pelo apartamento</span>
+          </button>
+          <span class="ill">Imagem ilustrativa</span>
+          <div class="cap">
+            <span class="n" id="capN">1 de 4</span>
+            <span class="t" id="capT">Cozinha e sala integradas</span>
+            <span class="d" id="capD">Cozinha, área de serviço, estar e jantar no mesmo ambiente.</span>
+          </div>
+        </div>
+        <div class="stage-ctl">
+          <div class="dots" id="dots"></div>
+          <div class="ctl-btns">
+            <button type="button" id="prev" aria-label="Ambiente anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+            <button type="button" id="next" aria-label="Próximo ambiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          </div>
+        </div>
+        <p class="note" style="margin-top:10px">Imagens ilustrativas da MRV. Móveis e decoração não fazem parte do imóvel.</p>
+      </div>
+      <div class="plan">
+        <h3 id="planTitle">2 quartos com varanda</h3>
+        <p class="lbl">O que vem na unidade</p>
+        <ul class="acab" id="acab"></ul>
+        <a class="btn ghost" href="#plantas">Ver a planta</a>
+      </div>
+    </div>
+
+    <div class="plantas" id="plantas">
+      <div class="head">
+        <h3>Todas as <span class="it">plantas</span></h3>
+        <p class="note">Toque na planta para ampliar.</p>
+      </div>
+      <div class="pl-grid" id="plGrid"></div>
+      <p class="note">Plantas ilustrativas da MRV, todas da Torre 3. Metragens aproximadas. Móveis e decoração não fazem parte do imóvel.</p>
+    </div>
+  </div>
+</section>
+
+<dialog class="zoom" id="zoom" aria-labelledby="zoomT">
+  <div class="zbar"><span id="zoomT">Planta</span><button type="button" id="zoomX">Fechar</button></div>
+  <div class="zsc"><img id="zoomImg" alt=""></div>
+</dialog>
+
+<section id="sol" class="band-preta">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Sol e sombra</p>
+      <h2>Veja onde o sol bate <span class="it">no seu andar</span></h2>
+      <div class="rule"></div>
+      <p>A torre e o andar vêm da planta que você escolheu acima. Aqui você muda a estação, a hora e o lado do apartamento. A simulação calcula a posição do sol em Duque de Caxias e a sombra que uma torre faz na outra. Arraste o modelo para girar.</p>
+    </div>
+    <div class="sun">
+      <div class="sun-view" id="sunView">
+        <canvas id="sun3d" aria-label="Modelo 3D do condomínio com as três torres, a área de lazer e as sombras do horário escolhido"></canvas>
+        <span class="sun-hint">Arraste para girar · pinça para aproximar</span>
+        <span class="sun-load" id="sunLoad">Carregando o condomínio em 3D</span>
+      </div>
+      <div class="ctl">
+        <div class="grp">
+          <span class="lbl" id="lblSeason">Estação</span>
+          <div class="seg" role="group" aria-labelledby="lblSeason" id="segSeason">
+            <button type="button" data-v="verao" aria-pressed="false">Verão</button>
+            <button type="button" data-v="equi" aria-pressed="false">Outono e primavera</button>
+            <button type="button" data-v="inverno" aria-pressed="true">Inverno</button>
+          </div>
+        </div>
+        <div class="grp">
+          <label for="hour">Horário</label>
+          <div class="range-row">
+            <input id="hour" type="range" min="6" max="18" step="0.25" value="9">
+            <output id="hourOut" for="hour">9h</output>
+          </div>
+        </div>
+        <div class="grp">
+          <span class="lbl">Sua escolha</span>
+          <div class="escolha">
+            <span id="solEsc">Torre 2 · 9º andar</span>
+            <a href="#planta">Trocar andar</a>
+          </div>
+        </div>
+        <div class="grp">
+          <span class="lbl" id="lblSide">Lado do apartamento</span>
+          <div class="seg" role="group" aria-labelledby="lblSide" id="segSide">
+            <button type="button" data-v="L" aria-pressed="true">Leste · nascente</button>
+            <button type="button" data-v="O" aria-pressed="false">Oeste · poente</button>
+          </div>
+        </div>
+        <div class="status" aria-live="polite">
+          <span class="h" id="stH">Calculando</span>
+          <span class="s" id="stS"></span>
+          <span class="day" id="stDay"></span>
+        </div>
+        <p class="note">Pela implantação do material de vendas, nas torres 2 e 3 os finais pares ficam no lado leste e os ímpares no lado oeste. Na torre 1 é o inverso. Confirme a posição exata da sua unidade com o corretor.</p>
+        <p class="note">Simulação aproximada, feita a partir da implantação ilustrativa, com volumes simplificados e sem varandas ou recortes de fachada.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="lazer" class="band-prata">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Lazer</p>
+      <h2>Lazer completo, <span class="it">dentro do condomínio</span></h2>
+      <div class="rule"></div>
+      <p>Toda a área de lazer fica no lado norte do terreno, o lado que mais recebe sol ao longo do ano. Os números são os mesmos da implantação.</p>
+    </div>
+    <div class="gal">
+      <figure class="wide"><img src="img/piscinas.jpg" alt="Piscinas adulto e infantil com espreguiçadeiras" loading="lazy"><figcaption><span class="num">1</span>Piscinas adulto e infantil</figcaption></figure>
+      <figure><img src="img/gourmet-redario.jpg" alt="Espaço gourmet com churrasqueira e redário com redes" loading="lazy"><figcaption><span class="num">3</span>Espaço gourmet e redário</figcaption></figure>
+      <figure><img src="img/churrasqueira-quadra.jpg" alt="Churrasqueira com mesas ao lado da quadra" loading="lazy"><figcaption><span class="num">4</span>Churrasqueira</figcaption></figure>
+      <figure><img src="img/salao-festas.jpg" alt="Salão de festas com mesas postas" loading="lazy"><figcaption><span class="num">7</span>Salão de festas</figcaption></figure>
+      <figure><img src="img/quadra.jpg" alt="Quadra de areia para beach tennis" loading="lazy"><figcaption><span class="num">6</span>Quadra de beach tennis</figcaption></figure>
+      <figure><img src="img/academia.jpg" alt="Academia com esteiras, bicicleta e banco de musculação" loading="lazy"><figcaption><span class="num">9</span>Academia</figcaption></figure>
+      <figure><img src="img/espaco-fitness.jpg" alt="Espaço funcional ao ar livre ao lado das piscinas" loading="lazy"><figcaption><span class="num">10</span>Espaço funcional</figcaption></figure>
+      <figure class="wide"><img src="img/playground.jpg" alt="Playground cercado com brinquedos coloridos" loading="lazy"><figcaption><span class="num">5</span>Playground</figcaption></figure>
+    </div>
+    <p class="note" style="margin-top:14px">Imagens ilustrativas da MRV.</p>
+
+    <div class="impl">
+      <div class="head">
+        <h3>O condomínio <span class="it">visto de cima</span></h3>
+        <p class="note">3 torres, 612 unidades e 179 vagas de garagem, sendo 157 de carro e 22 de moto, em um terreno de 10.491,77 m².</p>
+      </div>
+      <figure><img src="img/implantacao.jpg" alt="Implantação do condomínio com as três torres, o estacionamento e a área de lazer ao norte" loading="lazy"><figcaption>Implantação ilustrativa</figcaption></figure>
+      <div class="legs">
+        <div class="g">
+          <h4>Área de lazer</h4>
+          <ul>
+          <li><span class="n lz">1</span><span>Piscina adulto</span></li>
+          <li><span class="n lz">2</span><span>Piscina infantil</span></li>
+          <li><span class="n lz">3</span><span>Gourmet</span></li>
+          <li><span class="n lz">4</span><span>Churrasqueira</span></li>
+          <li><span class="n lz">5</span><span>Playground</span></li>
+          <li><span class="n lz">6</span><span>Quadra Beach Tennis</span></li>
+          <li><span class="n lz">7</span><span>Salão de Festas</span></li>
+          <li><span class="n lz">8</span><span>Copa Salão de Festas</span></li>
+          <li><span class="n lz">9</span><span>Academia</span></li>
+          <li><span class="n lz">10</span><span>Espaço funcional</span></li>
+          <li><span class="n lz">11</span><span>Bicicletários</span></li>
+          <li><span class="n lz">12</span><span>Redário</span></li>
+          <li><span class="n lz">13</span><span>Banheiros PCD</span></li>
+          <li><span class="n lz">14</span><span>Vestiários lazer</span></li>
+          </ul>
+        </div>
+        <div class="g">
+          <h4>Área de apoio</h4>
+          <ul>
+          <li><span class="n ap">13</span><span>Guarita</span></li>
+          <li><span class="n ap">14</span><span>Depósito de material de limpeza</span></li>
+          <li><span class="n ap">15</span><span>Refeitório</span></li>
+          <li><span class="n ap">16</span><span>Administração/Telecom</span></li>
+          <li><span class="n ap">17</span><span>Vestiários apoio</span></li>
+          <li><span class="n ap">18</span><span>Depósito de lixo</span></li>
+          <li><span class="n ap">19</span><span>Previsão E.T.E</span></li>
+          <li><span class="n ap">20</span><span>Apoio E.T.E</span></li>
+          <li><span class="n ap">21</span><span>Casa de máquinas E.T.E</span></li>
+          <li><span class="n ap">22</span><span>Casa de máquinas piscina</span></li>
+          <li><span class="n ap">23</span><span>Apoio PCD</span></li>
+          <li><span class="n ap">24</span><span>Casa de máquinas castelos</span></li>
+          <li><span class="n ap">25</span><span>Castelos d’água</span></li>
+          <li><span class="n ap">26</span><span>Reservatório inferior</span></li>
+          </ul>
+        </div>
+        <div class="full">
+          <div class="g">
+            <h4>Residencial</h4>
+            <ul>
+              <li><span class="sw priv" aria-hidden="true"></span><span>Área privativa</span></li>
+            </ul>
+          </div>
+          <div class="g">
+            <h4>Acessos</h4>
+            <ul>
+              <li><span class="tri" aria-hidden="true"></span><span>Blocos</span></li>
+              <li><span class="tri ped" aria-hidden="true"></span><span>Pedestre</span></li>
+              <li><span class="tri vei" aria-hidden="true"></span><span>Veículos</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="diag" aria-hidden="true"><i></i></div>
+<section id="obra" class="band-preta">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Obra</p>
+      <h2>As torres <span class="it">já estão de pé</span></h2>
+      <div class="rule"></div>
+      <p>Fotos reais tiradas no condomínio. Os renders mostram como os espaços foram projetados. Estas mostram o que já existe.</p>
+    </div>
+    <div class="obra">
+      <figure><img src="img/obra-portaria.jpg" alt="Entrada do Primavera Garden com o nome do condomínio no pórtico" loading="lazy"><span class="tag">Foto real</span></figure>
+      <figure><img src="img/obra-torres2.jpg" alt="As três torres vistas do pátio interno do condomínio" loading="lazy"><span class="tag">Foto real</span></figure>
+      <figure><img src="img/obra-piscina2.jpg" alt="Piscinas prontas com as três torres ao fundo" loading="lazy"><span class="tag">Foto real</span></figure>
+    </div>
+  </div>
+</section>
+
+<section id="local">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Localização</p>
+      <h2>No Jardim Primavera, <span class="it">tudo fica pertinho</span></h2>
+      <div class="rule"></div>
+      <p>O que o dia a dia pede fica perto de casa.</p>
+    </div>
+    <div class="local">
+      <figure>
+        <img src="img/localizacao.jpg" alt="Foto aérea do Jardim Primavera com o condomínio, a Rodovia Washington Luís e os pontos de referência marcados" loading="lazy">
+        <figcaption>Imagem aérea ilustrativa</figcaption>
+      </figure>
+      <div>
+        <ul class="near">
+          <li><span class="k">Rodovia Washington Luís</span><span class="v">Pertinho</span></li>
+          <li><span class="k">Atacadão Global</span><span class="v">Pertinho</span></li>
+          <li><span class="k">Hospital Adão Pereira Nunes</span><span class="v">Pertinho</span></li>
+          <li><span class="k">Outlet Premium</span><span class="v">Pertinho</span></li>
+          <li><span class="k">Prefeitura Municipal</span><span class="v">Pertinho</span></li>
+        </ul>
+        <div class="addr">
+          <p>Jardim Primavera, Duque de Caxias, RJ</p>
+          <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Jardim%20Primavera%2C%20Duque%20de%20Caxias%2C%20RJ" target="_blank" rel="noopener">Abrir no mapa</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="comprar" class="band-prata">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Como comprar</p>
+      <h2>Minha Casa Minha Vida, com a <span class="it">Caixa</span></h2>
+      <div class="rule"></div>
+      <p>O programa do governo federal junta três apoios que fazem a parcela caber no orçamento de quem paga aluguel hoje.</p>
+    </div>
+    <div class="preco">
+      <p class="eyebrow">Apartamentos</p>
+      <p class="v">A partir de <b>R$ 229.000</b></p>
+      <p class="note">Valor da unidade de menor preço na tabela vigente, sujeito a alteração sem aviso prévio e à aprovação de crédito pela Caixa. O valor não inclui ITBI, registro e demais custos da aquisição.</p>
+    </div>
+    <div class="buy">
+      <div class="c"><span class="big">Subsídio</span><h4>Um valor que o programa paga por você</h4><p>Ele reduz o quanto você precisa financiar. Quanto você recebe depende da sua renda familiar.</p></div>
+      <div class="c"><span class="big">420 meses</span><h4>Financiamento em até 35 anos</h4><p>Pela Caixa, com juros reduzidos para as faixas do programa.</p></div>
+      <div class="c"><span class="big">FGTS</span><h4>Seu fundo de garantia na compra</h4><p>Se você tem direito, o saldo do FGTS pode entrar no pagamento.</p></div>
+    </div>
+    <p class="legal-box">Subsídio, prazo, taxas e uso do FGTS dependem da renda, das regras vigentes do programa e da aprovação de crédito pela Caixa. Valores e condições sujeitos a alteração.</p>
+  </div>
+</section>
+
+<section id="contato" class="band-preta">
+  <div class="wrap">
+    <div class="cta">
+      <div style="display:grid;gap:16px">
+        <p class="eyebrow">Sua parcela</p>
+        <h2>Descubra quanto fica <span class="it">por mês</span></h2>
+        <p>Renda, FGTS e subsídio mudam de família para família, e são eles que definem quanto você vai pagar. Um corretor da Hotz faz essa conta com você, com os números reais da sua situação.</p>
+      </div>
+      <div class="box">
+        <a class="btn wa-link" href="#contato" id="waMain">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/></svg>
+          Simular com um corretor no WhatsApp
+        </a>
+        <div class="num">
+          <output id="waNum">(21) 97560-8552</output>
+          <button type="button" id="copyNum">Copiar número</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <div class="who">
+        <img class="hz" src="img/logo-hotz-claro.png" alt="Hotz Brokers">
+        <span class="s">Hotz Brokers · CRECI J 12.426</span>
+      </div>
+      <div class="who">
+        <span class="s">Incorporação e construção</span>
+        <img class="mrv" src="img/logo-mrv.png" alt="MRV">
+      </div>
+    </div>
+    <div class="fine">
+      <p>As imagens são meramente ilustrativas, buscando representar artisticamente o empreendimento. Móveis, objetos, revestimentos decorativos, equipamentos e demais acabamentos são apenas referências e não fazem parte do contrato de compra e venda da unidade. Consulte o memorial descritivo para detalhes sobre os materiais a serem entregues.</p>
+      <p>Metragens aproximadas, com variação aceitável de até 5% para mais ou para menos. Área privativa acessória com valores aproximados. A vegetação exibida representa o porte adulto de referência.</p>
+      <p>A simulação de sol e sombra é aproximada e não tem valor técnico. A disponibilidade de unidades muda a qualquer momento e deve ser confirmada com o corretor.</p>
+      <p>Responsáveis técnicos: Priscilla Monção da Costa Neto, CAU A-236567-7 · Thales Fabbrin Xavier, CREA 2019105612.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script>
+(function(){
+'use strict';
+var REDUCE = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+/* a torre e o andar são escolhidos no seletor de plantas; sunSync avisa a simulação de sol */
+var sunSync = function(){};
+
+/* ---------- Contato ---------- */
+var WA_NUMBER = '5521975608552';
+var WA_DISPLAY = '(21) 97560-8552';
+var WA_TEXT = 'Olá! Vi a página do Primavera Garden e quero simular a minha parcela.';
+document.getElementById('waNum').textContent = WA_DISPLAY;
+function waHref(texto){
+  if (!WA_NUMBER) return '#contato';
+  return 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(texto || WA_TEXT);
+}
+if (WA_NUMBER) {
+  document.querySelectorAll('.wa-link').forEach(function(a){ a.href = waHref(); a.target = '_blank'; a.rel = 'noopener'; });
+}
+document.getElementById('copyNum').addEventListener('click', function(e){
+  var btn = e.currentTarget, out = document.getElementById('waNum');
+  var done = function(){ btn.textContent = 'Número copiado'; setTimeout(function(){ btn.textContent = 'Copiar número'; }, 1800); };
+  var sel = function(){ var r = document.createRange(); r.selectNodeContents(out); var s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = 'Número selecionado'; };
+  try { navigator.clipboard.writeText(out.textContent).then(done, sel); } catch(err){ sel(); }
+});
+
+/* ---------- Dados ---------- */
+var CENAS = {
+  area:    { img:'img/clip5-area-privativa.jpg', mp4:'img/v-area.mp4', vid:'img/a-area.webp',    t:'Área privativa', d:'Um quintal que é da sua unidade, com porta direto da sala.' },
+  varanda: { img:'img/clip2-varanda.jpg',        mp4:'img/v-varanda.mp4', vid:'img/a-varanda.webp', t:'Varanda',        d:'Ligada à sala por uma porta de vidro.' },
+  cozinha: { img:'img/clip1-sala.jpg',           mp4:'img/v-cozinha.mp4', vid:'img/a-cozinha.webp', t:'Cozinha e sala integradas', d:'Cozinha, área de serviço, estar e jantar no mesmo ambiente.' },
+  qmaior:  { img:'img/clip3-quarto-maior.jpg',   mp4:'img/v-qmaior.mp4', vid:'img/a-qmaior.webp',  t:'Quarto maior',   d:'O quarto do casal.' },
+  qmenor:  { img:'img/clip4-quarto-menor.jpg',   mp4:'img/v-qmenor.mp4', vid:'img/a-qmenor.webp',  t:'Quarto menor',   d:'Para o filho, o escritório ou a visita.' }
+};
+var ACAB_BASE = [
+  'Pia em inox na cozinha',
+  'Tanque e lavatório em mármore sintético',
+  'Cerâmica até 1,50 m na parede da pia e do tanque, e do piso ao teto no box',
+  'Paredes em pintura lisa',
+  'Porta de entrada em compensado de madeira'
+];
+var TIPOS = {
+  terreo: {
+    titulo:'Térreo com quintal privativo', floor:1, andares:[1], link:'Ver as plantas',
+    cenas:['cozinha','area','qmaior','qmenor'],
+    acab:['Piso em cerâmica na unidade','Área privativa com piso cimentado e/ou gramado','Porta do quintal e janelas em alumínio e vidro'].concat(ACAB_BASE)
+  },
+  varanda: {
+    titulo:'2 quartos com varanda', floor:9, andares:null, link:'Ver a planta',
+    cenas:['cozinha','varanda','qmaior','qmenor'],
+    acab:['Piso em cerâmica na sala, cozinha, banheiro e varanda','Piso laminado nos quartos','Porta da varanda e janelas em alumínio e vidro'].concat(ACAB_BASE)
+  },
+  tipo: {
+    titulo:'2 quartos sem varanda', floor:9, andares:null, link:'Ver a planta',
+    cenas:['cozinha','qmaior','qmenor'],
+    acab:['Piso em cerâmica na sala, cozinha e banheiro','Piso laminado nos quartos','Janelas em alumínio e vidro'].concat(ACAB_BASE)
+  }
+};
+
+/* Legendas transcritas das plantas da MRV */
+var L4 = 'Parede revestida em cerâmica até 1,50 m na parede da pia e do tanque, restante revestido em pintura lisa';
+var L5 = 'Parede revestida em cerâmica até 1,50 m na parede do lavatório, restante revestido em pintura lisa. Na área do box, cerâmica do piso ao teto';
+var LEG_TERREO = ['Piso revestido em cerâmica','Piso cimentado e/ou gramado','Parede revestida em pintura lisa',L4,L5,'Parede revestida conforme fachada','Pia em inox','Tanque em mármore sintético','Lavatório em mármore sintético','Porta em compensado de madeira','Porta em alumínio e vidro','Janela em alumínio e vidro'];
+var LEG_VARANDA = ['Piso revestido em cerâmica','Piso revestido em laminado','Parede revestida em pintura lisa',L4,L5,'Parede revestida conforme fachada','Pia em inox','Tanque em mármore sintético','Lavatório em mármore sintético','Porta em compensado de madeira','Porta em alumínio e vidro','Janela em alumínio e vidro'];
+var LEG_TIPO = ['Piso revestido em cerâmica','Piso revestido em laminado','Parede revestida em pintura lisa',L4,L5,'Pia em inox','Tanque em mármore sintético','Lavatório em mármore sintético','Porta em compensado de madeira','Janela em alumínio e vidro'];
+var PLANTAS = [
+  { n:'110', tipo:'terreo',  eyebrow:'Térreo com área privativa', img:'img/planta-110.jpg', leg:LEG_TERREO },
+  { n:'112', tipo:'terreo',  eyebrow:'Térreo com área privativa', img:'img/planta-112.jpg', leg:LEG_TERREO },
+  { n:'203', tipo:'varanda', eyebrow:'2 quartos com varanda',     img:'img/planta-203.jpg', leg:LEG_VARANDA },
+  { n:'201', tipo:'tipo',    eyebrow:'2 quartos sem varanda',                 img:'img/planta-201.jpg', leg:LEG_TIPO }
+];
+
+/* ---------- Estoque da MRV ----------
+   Cada torre tem 17 andares e 12 finais por andar (612 unidades). O número da unidade é o andar
+   seguido do final: 9º andar, final 03 = 903. ESTOQUE.u[torre][andar][final] guarda o índice do
+   rótulo em ESTOQUE.lbl. Só entram aqui as unidades que estavam no estoque na data indicada;
+   as demais a página trata como indisponíveis, sem afirmar que foram vendidas. */
+var ESTOQUE = {"data":"11 de novembro de 2026","lbl":["2 quartos com varanda · 40,12 m² · com vaga","2 quartos sem varanda · 35,36 m² · com vaga","2 quartos com varanda · 40,39 m² · com vaga","2 quartos sem varanda · 35,36 m²","1 quarto · 35,36 m²","2 quartos com varanda · 40,12 m²","Térreo com quintal privativo · 40,12 m² + 24,11 m² de quintal · com vaga","Térreo com quintal privativo · 40,39 m² + 21,59 m² de quintal · com vaga","Térreo com quintal privativo · 40,39 m² + 24,24 m² de quintal · com vaga","Térreo com quintal privativo · 40,12 m² + 21,65 m² de quintal · com vaga","2 quartos com varanda · 40,39 m²","Térreo com quintal privativo · 35,36 m² + 33,65 m² de quintal · com vaga"],"u":{"2":{"6":{"03":0},"7":{"03":0},"8":{"08":2,"12":1},"12":{"03":0,"12":1},"13":{"03":0,"08":2},"14":{"03":0,"08":2,"11":3,"12":1},"15":{"03":0,"05":2,"08":2,"11":3,"12":1},"16":{"01":1,"02":3,"03":0,"05":2,"11":3,"12":1},"17":{"01":1,"02":3,"03":0,"05":2,"08":2,"11":3,"12":1}},"3":{"1":{"04":6,"05":7,"08":8,"09":9,"12":11},"2":{"02":4},"3":{"05":10,"08":10},"4":{"02":4,"03":5,"05":10},"5":{"02":4},"6":{"02":4,"04":5,"05":10,"08":10,"09":5,"10":5},"7":{"02":4,"05":10,"07":10,"09":5},"8":{"02":4,"05":10,"07":10,"09":5},"9":{"02":4,"04":5,"05":10,"07":10,"09":5,"10":5},"10":{"02":4,"09":5},"11":{"05":10,"07":10,"09":5,"10":5},"12":{"04":5,"05":10,"07":10,"09":5},"13":{"04":5,"05":10,"06":10,"09":5,"10":5,"11":1},"14":{"04":5,"05":10,"06":10,"09":5,"10":5,"12":3},"15":{"04":5,"05":10,"06":10,"09":5,"10":5,"11":1},"16":{"03":0,"04":5,"05":10,"06":10,"09":5,"10":5,"11":1,"12":1},"17":{"03":0,"05":2,"07":10,"08":2,"09":5}}}};
+var FINAIS = ['01','02','03','04','05','06','07','08','09','10','11','12'];
+var NF = 17;
+function pisoDe(t, a){ return (ESTOQUE.u[t] || {})[String(a)] || null; }
+function livresTorre(t){ var o = ESTOQUE.u[t] || {}, n = 0; for (var a in o) n += Object.keys(o[a]).length; return n; }
+
+/* ---------- Todas as plantas ---------- */
+var plGrid = document.getElementById('plGrid');
+var zoom = document.getElementById('zoom'), zoomImg = document.getElementById('zoomImg'), zoomT = document.getElementById('zoomT');
+function openZoom(p){
+  zoomImg.src = p.img; zoomImg.alt = 'Planta ilustrativa do apartamento ' + p.n + ', Torre 3';
+  zoomT.textContent = 'Apartamento ' + p.n + ' · ' + p.eyebrow;
+  if (zoom.showModal) zoom.showModal(); else window.open(p.img, '_blank');
+}
+document.getElementById('zoomX').addEventListener('click', function(){ zoom.close(); });
+zoom.addEventListener('click', function(e){ if (e.target === zoom) zoom.close(); });
+PLANTAS.forEach(function(p){
+  var a = document.createElement('article'); a.className = 'pl'; a.dataset.tipo = p.tipo;
+  var b = document.createElement('button'); b.type = 'button'; b.className = 'pl-img';
+  b.setAttribute('aria-label', 'Ampliar a planta do apartamento ' + p.n);
+  var im = document.createElement('img'); im.src = p.img; im.loading = 'lazy';
+  im.alt = 'Planta ilustrativa do apartamento ' + p.n + ', ' + p.eyebrow.toLowerCase() + ', Torre 3';
+  b.appendChild(im); b.addEventListener('click', function(){ openZoom(p); });
+  var badge = document.createElement('span'); badge.className = 'badge'; badge.textContent = 'Sua escolha';
+  var body = document.createElement('div'); body.className = 'pl-body';
+  var ey = document.createElement('p'); ey.className = 'eyebrow'; ey.textContent = p.eyebrow;
+  var h = document.createElement('h4'); h.textContent = 'Apartamento ' + p.n;
+  var ref = document.createElement('p'); ref.className = 'ref'; ref.textContent = 'Primavera Garden · Torre 3';
+  var det = document.createElement('details'); det.open = true; var sm = document.createElement('summary'); sm.textContent = 'Legenda da planta';
+  var ol = document.createElement('ol'); ol.className = 'leg';
+  p.leg.forEach(function(t){ var li = document.createElement('li'); li.textContent = t; ol.appendChild(li); });
+  det.appendChild(sm); det.appendChild(ol);
+  body.appendChild(ey); body.appendChild(h); body.appendChild(ref); body.appendChild(det);
+  a.appendChild(b); a.appendChild(badge); a.appendChild(body); plGrid.appendChild(a);
+});
+
+/* ---------- Torre real, andares clicáveis ---------- */
+var NS = 'http://www.w3.org/2000/svg';
+var svg = document.getElementById('tower');
+/* Fachada da torre à direita do render: limites medidos na imagem, 17 pavimentos */
+var FX0 = 1306, FX1 = 1538, F1 = 718, FHH = 37.31;
+function fy(k){ return F1 - (k-1)*FHH; }
+function el(n, a, parent){ var e = document.createElementNS(NS, n); for (var k in a) e.setAttribute(k, a[k]); (parent||svg).appendChild(e); return e; }
+var defs = el('defs', {});
+var lg = el('linearGradient', {id:'lgt', x1:'0', x2:'1', y1:'0', y2:'0'}, defs);
+el('stop', {offset:'0', 'stop-color':'#F4C66A', 'stop-opacity':'0'}, lg);
+el('stop', {offset:'.12', 'stop-color':'#F4C66A', 'stop-opacity':'.92'}, lg);
+el('stop', {offset:'.88', 'stop-color':'#F4C66A', 'stop-opacity':'.92'}, lg);
+el('stop', {offset:'1', 'stop-color':'#F4C66A', 'stop-opacity':'0'}, lg);
+var flt = el('filter', {id:'glow', x:'-30%', y:'-150%', width:'160%', height:'400%'}, defs);
+el('feGaussianBlur', {stdDeviation:'12'}, flt);
+var range = el('rect', {x:FX0, y:fy(NF) - FHH/2, width:FX1 - FX0, height:(fy(2) + FHH/2) - (fy(NF) - FHH/2), fill:'#C9A866', opacity:'0', class:'tw-range'});
+var lightG = el('g', {class:'tw-light'});
+el('rect', {x:FX0 - 34, y:-8, width:FX1 - FX0 + 68, height:FHH + 16, fill:'#FFC861', opacity:'.6', filter:'url(#glow)'}, lightG);
+el('rect', {x:FX0 - 6, y:0, width:FX1 - FX0 + 12, height:FHH, fill:'url(#lgt)'}, lightG);
+el('line', {x1:FX0, x2:FX1, y1:1, y2:1, stroke:'#FFF4D6', 'stroke-width':'2', opacity:'.9'}, lightG);
+el('line', {x1:FX0, x2:FX1, y1:FHH - 1, y2:FHH - 1, stroke:'#FFF4D6', 'stroke-width':'2', opacity:'.9'}, lightG);
+function setLight(floor){ lightG.style.transform = 'translateY(' + (fy(floor) - FHH/2) + 'px)'; }
+var hits = [];
+for (var hf = 1; hf <= NF; hf++){
+  (function(k){
+    var r = el('rect', {x:FX0 - 10, y:fy(k) - FHH/2, width:FX1 - FX0 + 20, height:FHH, class:'hit'});
+    r.addEventListener('click', function(){ pickAndar(k, true); });
+    hits.push(r);
+  })(hf);
+}
+setLight(1);
+
+/* ---------- Seletor, andar e disponibilidade ---------- */
+var opts = document.querySelectorAll('.opt');
+var stage = document.getElementById('stage');
+var layers = stage.querySelectorAll('.layer');
+var capN = document.getElementById('capN'), capT = document.getElementById('capT'), capD = document.getElementById('capD');
+var dots = document.getElementById('dots');
+var floorTag = document.getElementById('floorTag');
+var andaresBox = document.getElementById('andares');
+var dispW = document.getElementById('dispW'), dispS = document.getElementById('dispS'), dispBody = document.getElementById('dispBody');
+var cur = 0, idx = 0, seq = [], auto = false, palcoOn = false, tipo = 'varanda', torre = '2', andar = 9;
+
+var andarBtns = [];
+for (var af = 1; af <= NF; af++){
+  (function(k){
+    var b = document.createElement('button');
+    b.type = 'button'; b.dataset.a = k;
+    var num = document.createElement('span'); num.textContent = k;
+    var pip = document.createElement('i'); pip.className = 'pip';
+    b.appendChild(num); b.appendChild(pip);
+    b.setAttribute('aria-label', k + 'º andar');
+    b.addEventListener('click', function(){ pickAndar(k, true); });
+    andaresBox.appendChild(b); andarBtns.push(b);
+  })(af);
+}
+
+function renderDots(){ dots.innerHTML = ''; seq.forEach(function(_, i){ var s = document.createElement('span'); if (i === idx) s.className = 'on'; dots.appendChild(s); }); }
+/* Percurso: tenta o vídeo; se o aparelho ou o visualizador não tocar em 3 s, cai para a imagem animada.
+   Com "reduzir movimento" ligado nada começa sozinho, mas o botão de play continua valendo. */
+var vTour = document.getElementById('vTour'), btnPlay = document.getElementById('playTour');
+var relogio = null, vez = 0, videoFalhou = false;
+function limpar(){ if (relogio){ clearTimeout(relogio); relogio = null; } }
+function seguir(minha, ms){
+  limpar();
+  if (!auto || idx === seq.length - 1){ auto = false; return; }
+  relogio = setTimeout(function(){ if (minha === vez) show(idx + 1); }, ms);
+}
+function animada(c, alvo, minha){
+  var pre = new Image();
+  pre.onload = function(){ if (minha === vez) alvo.src = c.vid; };
+  pre.src = c.vid;
+  seguir(minha, 5600);
+}
+function show(i){
+  idx = (i + seq.length) % seq.length;
+  var c = CENAS[seq[idx]], minha = ++vez;
+  var nx = layers[1-cur], pv = layers[cur];
+  nx.alt = c.t + ', imagem ilustrativa';
+  nx.src = c.img;
+  nx.classList.add('on'); pv.classList.remove('on'); cur = 1 - cur;
+  vTour.classList.remove('on'); try { vTour.pause(); } catch(e){}
+  capN.textContent = (idx+1) + ' de ' + seq.length; capT.textContent = c.t; capD.textContent = c.d;
+  renderDots(); limpar();
+  btnPlay.hidden = palcoOn;
+  if (!palcoOn) return;
+  if (videoFalhou || !c.mp4){ animada(c, nx, minha); return; }
+  var caiu = false;
+  var cair = function(){ if (caiu || minha !== vez) return; caiu = true; videoFalhou = true; vTour.classList.remove('on'); animada(c, nx, minha); };
+  var guarda = setTimeout(function(){ if (!vTour.classList.contains('on')) cair(); }, 3000);
+  vTour.onplaying = function(){ if (minha !== vez) return; clearTimeout(guarda); vTour.classList.add('on'); };
+  vTour.onended = function(){ if (minha !== vez) return; if (auto && idx < seq.length - 1) show(idx + 1); else { auto = false; btnPlay.hidden = false; } };
+  vTour.onerror = function(){ clearTimeout(guarda); cair(); };
+  vTour.setAttribute('src', c.mp4); vTour.load();
+  var p = vTour.play(); if (p && p['catch']) p['catch'](function(){ clearTimeout(guarda); cair(); });
+}
+function ligarPalco(encadear){
+  if (encadear) auto = true;
+  palcoOn = true;
+  show(idx);
+}
+function stop(){ auto = false; limpar(); }
+function play(){ ligarPalco(true); }
+btnPlay.addEventListener('click', function(){
+  if (palcoOn && idx === seq.length - 1) idx = 0;
+  ligarPalco(true);
+});
+if (!REDUCE){
+  if (window.IntersectionObserver){
+    new IntersectionObserver(function(es, ob){
+      if (es[0].isIntersecting){ ob.disconnect(); if (!palcoOn) ligarPalco(true); }
+    }, {threshold: 0.35}).observe(stage);
+  }
+  var arranque = function(){
+    if (palcoOn){ window.removeEventListener('scroll', arranque); return; }
+    var r = stage.getBoundingClientRect(), h = window.innerHeight || 800;
+    if (r.top < h*0.75 && r.bottom > h*0.25){ window.removeEventListener('scroll', arranque); ligarPalco(true); }
+  };
+  window.addEventListener('scroll', arranque, {passive:true});
+}
+
+function renderPlan(t){
+  var T = TIPOS[t];
+  document.getElementById('planTitle').textContent = T.titulo;
+  document.querySelector('.plan .btn').textContent = T.link;
+  var ul = document.getElementById('acab'); ul.innerHTML = '';
+  T.acab.forEach(function(a){ var li = document.createElement('li'); li.textContent = a; ul.appendChild(li); });
+  plGrid.querySelectorAll('.pl').forEach(function(c){ c.classList.toggle('sel', c.dataset.tipo === t); });
+}
+
+function renderDisp(){
+  var T = TIPOS[tipo];
+  dispW.textContent = 'Torre ' + torre + ' · ' + andar + 'º andar';
+  dispS.textContent = T.titulo;
+  dispBody.innerHTML = '';
+  var piso = pisoDe(torre, andar) || {};
+  var livres = FINAIS.filter(function(f){ return piso[f] !== undefined; });
+  var ocupados = FINAIS.filter(function(f){ return piso[f] === undefined; });
+
+  var vazia = livresTorre(torre) === 0;
+  var resumo = document.createElement('p'); resumo.className = 'resumo';
+  if (livres.length) resumo.textContent = livres.length === 1 ? '1 apartamento livre neste andar.' : livres.length + ' apartamentos livres neste andar.';
+  else if (vazia) resumo.textContent = 'A Torre ' + torre + ' não tem unidades no estoque desta data. As torres 2 e 3 ainda têm.';
+  else resumo.textContent = 'Nenhum apartamento livre neste andar. Os andares marcados com o ponto dourado ainda têm unidades.';
+  dispBody.appendChild(resumo);
+
+  if (livres.length){
+    var ul = document.createElement('ul'); ul.className = 'unidades';
+    livres.forEach(function(f){
+      var li = document.createElement('li');
+      var lin = document.createElement('div'); lin.className = 'u-top';
+      var pt = document.createElement('span'); pt.className = 'pt d';
+      var n = document.createElement('span'); n.className = 'n'; n.textContent = andar + f;
+      var st = document.createElement('span'); st.className = 'st'; st.textContent = 'Disponível';
+      lin.appendChild(pt); lin.appendChild(n); lin.appendChild(st);
+      var de = document.createElement('span'); de.className = 'desc'; de.textContent = ESTOQUE.lbl[piso[f]];
+      li.appendChild(lin); li.appendChild(de); ul.appendChild(li);
+    });
+    dispBody.appendChild(ul);
+  }
+  if (ocupados.length && !vazia){
+    var o = document.createElement('p'); o.className = 'indisp';
+    o.textContent = 'Indisponíveis hoje: ' + ocupados.map(function(f){ return andar + f; }).join(', ') + '.';
+    dispBody.appendChild(o);
+  }
+
+  var a = document.createElement('a'); a.className = 'btn';
+  if (livres.length){
+    a.textContent = 'Falar sobre o ' + andar + 'º andar';
+    a.href = waHref('Olá! Vi na página do Primavera Garden que o ' + andar + 'º andar da Torre ' + torre + ' tem ' + livres.map(function(f){ return andar + f; }).join(', ') + ' livres. Quero saber os valores e a parcela.');
+  } else {
+    a.textContent = vazia ? 'Ver as unidades livres nas outras torres' : 'Ver o que está livre nos outros andares';
+    a.href = waHref('Olá! Quero saber quais apartamentos do Primavera Garden ainda estão livres.');
+  }
+  if (WA_NUMBER){ a.target = '_blank'; a.rel = 'noopener'; }
+  dispBody.appendChild(a);
+
+  var nota = document.createElement('p'); nota.className = 'note';
+  nota.textContent = 'Estoque da MRV de ' + ESTOQUE.data + '. Indisponível quer dizer fora do estoque dessa data. A disponibilidade muda a qualquer momento e deve ser confirmada com o corretor.';
+  dispBody.appendChild(nota);
+}
+
+function marcarAndares(){
+  andarBtns.forEach(function(b){
+    var k = +b.dataset.a, p = pisoDe(torre, k);
+    var tem = !!p && Object.keys(p).length > 0;
+    b.classList.toggle('has', tem);
+    b.title = tem ? Object.keys(p).length + ' livre(s) no ' + k + 'º andar' : 'Sem unidades no estoque de hoje';
+  });
+  document.getElementById('torres').querySelectorAll('button').forEach(function(x){
+    var c = x.querySelector('.ct');
+    if (!c){ c = document.createElement('span'); c.className = 'ct'; x.appendChild(c); }
+    c.textContent = livresTorre(x.dataset.t);
+  });
+}
+function pickAndar(k, fromUser){
+  andar = k;
+  andarBtns.forEach(function(b){ b.setAttribute('aria-pressed', +b.dataset.a === k ? 'true' : 'false'); });
+  floorTag.textContent = k + 'º andar';
+  setLight(k);
+  renderDisp();
+  sunSync();
+}
+
+function choose(t){
+  tipo = t; var T = TIPOS[t];
+  opts.forEach(function(o){ o.setAttribute('aria-pressed', o.dataset.tipo === t ? 'true' : 'false'); });
+  var permitido = T.andares;
+  andarBtns.forEach(function(b){
+    var k = +b.dataset.a;
+    b.disabled = permitido ? permitido.indexOf(k) < 0 : k < 2;
+  });
+  range.style.opacity = permitido ? '0' : '.2';
+  var alvo = andar;
+  if (permitido && permitido.indexOf(alvo) < 0) alvo = permitido[0];
+  if (!permitido && alvo < 2) alvo = T.floor;
+  marcarAndares();
+  pickAndar(alvo);
+  seq = T.cenas.slice(); auto = false;
+  show(0);
+  renderPlan(t);
+}
+opts.forEach(function(o){ o.addEventListener('click', function(){ choose(o.dataset.tipo); }); });
+document.getElementById('torres').querySelectorAll('button').forEach(function(b){
+  b.addEventListener('click', function(){
+    torre = b.dataset.t;
+    document.getElementById('torres').querySelectorAll('button').forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+    marcarAndares(); renderDisp(); sunSync();
+  });
+});
+document.getElementById('prev').addEventListener('click', function(){ stop(); palcoOn = true; show(idx-1); });
+document.getElementById('next').addEventListener('click', function(){ stop(); palcoOn = true; show(idx+1); });
+document.getElementById('enter').addEventListener('click', function(){
+  var alvo = andar;
+  setLight(1);
+  requestAnimationFrame(function(){ requestAnimationFrame(function(){ setLight(alvo); }); });
+  setTimeout(function(){
+    stage.scrollIntoView({behavior: REDUCE ? 'auto' : 'smooth', block:'center'});
+    palcoOn = true; auto = true; show(0);
+  }, alvo > 1 && !REDUCE ? 1400 : 200);
+});
+choose('varanda');
+
+
+/* ---------- Sol 3D ---------- */
+var LAT = -22.62, LON_CORR = 0.113;
+var DAYS = { verao:355, equi:80, inverno:172 };
+var state = { season:'inverno', hour:9, side:'L' };
+function faixaAndar(){ return [andar - 1, andar]; }
+
+function solar(dayN, hour){
+  var r = Math.PI/180, d = 23.44*Math.sin(r*(360/365)*(dayN-81))*r, lat = LAT*r;
+  var h = 15*(hour + LON_CORR - 12)*r;
+  var sinEl = Math.sin(lat)*Math.sin(d) + Math.cos(lat)*Math.cos(d)*Math.cos(h);
+  var el = Math.asin(Math.max(-1, Math.min(1, sinEl)));
+  var den = Math.cos(el)*Math.cos(lat);
+  var cosAz = den > 1e-6 ? (Math.sin(d) - Math.sin(el)*Math.sin(lat))/den : 1;
+  var az = Math.acos(Math.max(-1, Math.min(1, cosAz)));
+  if (h > 0) az = 2*Math.PI - az;
+  return { el:el, az:az };
+}
+function fmtH(t){ var h = Math.floor(t + 1e-6), m = Math.round((t - h)*60); if (m === 60){ h++; m = 0; } return h + 'h' + (m ? (m < 10 ? '0' : '') + m : ''); }
+
+function segs(id, key, cb){
+  var box = document.getElementById(id);
+  box.querySelectorAll('button').forEach(function(b){
+    b.addEventListener('click', function(){
+      box.querySelectorAll('button').forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      state[key] = b.dataset.v; cb();
+    });
+  });
+}
+
+/* Contorno do desenho da implantação (terreno + rua) e árvores, em coordenadas da página do material */
+var OUTLINE = [[591.9,210.3],[532.5,188.3],[528.5,197.3],[522.5,203.8],[511.0,211.3],[493.5,218.8],[445.1,233.8],[331.2,263.8],[270.2,275.3],[160.3,290.3],[98.9,294.3],[79.9,293.8],[79.9,880.6],[543.0,760.1],[574.9,759.6],[574.9,269.8],[577.4,237.8]];
+var TREES = [[518.0,402.2,2],[413.1,741.1,2],[153.3,810.1,1],[525.0,334.3,2],[201.3,474.2,1],[421.1,449.2,2],[366.1,304.3,1],[424.1,491.2,2],[243.2,737.1,1],[294.2,406.2,2],[246.2,831.1,1],[435.1,397.2,1],[226.3,382.2,2],[204.3,776.1,2],[125.3,429.2,2],[355.1,381.2,1],[202.3,673.2,2],[356.1,681.2,2],[239.2,335.3,2],[100.4,471.2,2],[203.3,720.1,1],[432.1,775.1,2],[314.2,778.1,2],[85.4,863.1,2],[149.3,334.3,2],[405.1,640.2,1],[473.0,417.2,2],[241.2,592.2,1],[198.3,526.2,2],[247.2,509.2,1],[287.2,471.2,2],[417.1,589.2,1],[189.3,609.2,2],[457.0,282.3,2],[525.0,470.2,1],[250.2,690.2,2],[346.1,806.1,1],[374.1,770.1,1],[368.1,528.2,2],[346.1,465.2,2],[417.1,548.2,1],[417.1,694.2,1],[314.2,312.3,2],[103.4,337.3,1],[284.2,818.1,1],[256.2,417.2,2],[372.1,722.1,1],[190.3,330.3,1],[371.1,599.2,2],[517.0,295.3,2],[248.2,470.2,1],[206.3,573.2,2],[174.3,416.2,2],[113.4,779.1,1],[245.2,638.2,2],[104.4,817.1,1]];
+var IMGBOX = { x:65.4, y:170.3, w:542.5, h:713.8 };
+var LOT = [[81,880],[81,324],[137,322],[244,313],[351,299],[408,288],[458,277],[530,274],[531,763]];
+
+/* Fachada desenhada a partir do render da MRV: parede creme, molduras caqui,
+   janelas escuras com peitoril claro e varandas recuadas na face comprida. */
+var PAL = { parede:'#EAE4D5', parede2:'#DCD3BF', caqui:'#B9A878', caquiEsc:'#A08E5E',
+            vidro:'#333C44', vidroTopo:'#5E6E78', peitoril:'#F2EEE3', sombra:'rgba(90,80,62,.22)' };
+function janela(g, x, y, w, h, varanda){
+  g.fillStyle = PAL.peitoril; g.fillRect(x - 3, y - 3, w + 6, h + 6);
+  g.fillStyle = PAL.vidro; g.fillRect(x, y, w, h);
+  var grd = g.createLinearGradient(x, y, x, y + h);
+  grd.addColorStop(0, 'rgba(255,255,255,.26)'); grd.addColorStop(.5, 'rgba(255,255,255,.05)'); grd.addColorStop(1, 'rgba(0,0,0,.10)');
+  g.fillStyle = grd; g.fillRect(x, y, w, h);
+  g.fillStyle = PAL.peitoril; g.fillRect(x + w/2 - 1.5, y, 3, h);
+  g.fillStyle = 'rgba(255,255,255,.75)'; g.fillRect(x - 3, y + h + 1, w + 6, 3);
+  if (varanda){
+    g.fillStyle = PAL.sombra; g.fillRect(x - 3, y - 3, w + 6, 5);
+  }
+}
+function facadeCanvas(kind){
+  var c = document.createElement('canvas'), g = c.getContext('2d');
+  var longFace = kind === 'long';
+  c.width = longFace ? 2048 : 512; c.height = 1024;
+  var W = c.width, Hh = c.height, NF = 17, fh = Hh/NF;
+
+  g.fillStyle = PAL.parede; g.fillRect(0, 0, W, Hh);
+  /* leve variação vertical para a parede não ficar chapada */
+  var vg = g.createLinearGradient(0, 0, 0, Hh);
+  vg.addColorStop(0, 'rgba(255,255,255,.10)'); vg.addColorStop(1, 'rgba(120,110,92,.10)');
+  g.fillStyle = vg; g.fillRect(0, 0, W, Hh);
+  /* platibanda */
+  g.fillStyle = PAL.caqui; g.fillRect(0, 0, W, fh*0.22);
+  g.fillStyle = 'rgba(0,0,0,.12)'; g.fillRect(0, fh*0.22, W, 4);
+  /* embasamento */
+  g.fillStyle = PAL.parede2; g.fillRect(0, Hh - fh*0.5, W, fh*0.5);
+
+  if (longFace){
+    var un = 6, uw = W/un;
+    for (var u = 0; u < un; u++){
+      var x0 = u*uw;
+      /* junta entre unidades */
+      g.fillStyle = 'rgba(120,108,88,.14)'; g.fillRect(x0 + uw - 7, fh*0.22, 7, Hh);
+      g.fillStyle = 'rgba(255,255,255,.4)'; g.fillRect(x0, fh*0.22, 3, Hh);
+      /* faixa caqui vertical a cada duas unidades */
+      if (u % 3 === 1){
+        g.fillStyle = PAL.caqui; g.fillRect(x0 + uw*0.04, fh*0.34, uw*0.08, Hh - fh*0.84);
+        g.fillStyle = 'rgba(0,0,0,.08)'; g.fillRect(x0 + uw*0.04, fh*0.34, 3, Hh - fh*0.84);
+      }
+      for (var f = 0; f < NF; f++){
+        var y = Hh - (f + 1)*fh;
+        if (f < NF - 1){ g.fillStyle = 'rgba(120,108,88,.10)'; g.fillRect(x0, y, uw, 2); }
+        /* varanda recuada */
+        var bx = x0 + uw*0.52, bw = uw*0.4, by = y + fh*0.16, bh = fh*0.66;
+        g.fillStyle = 'rgba(96,86,68,.10)'; g.fillRect(bx, by, bw, bh);
+        g.fillStyle = PAL.peitoril; g.fillRect(bx, by + bh*0.56, bw, bh*0.44);
+        g.fillStyle = 'rgba(0,0,0,.10)'; g.fillRect(bx, by + bh*0.56, bw, 3);
+        janela(g, bx + bw*0.12, by + bh*0.08, bw*0.76, bh*0.46, true);
+        /* janela da sala */
+        janela(g, x0 + uw*0.14, y + fh*0.3, uw*0.26, fh*0.4, false);
+      }
+    }
+  } else {
+    /* face curta: duas colunas de janelas e molduras caqui dos dois lados */
+    [[1, 8], [9, 16]].forEach(function(sp){
+      [[0.03, 0.26], [0.71, 0.26]].forEach(function(fr){
+        var x = W*fr[0], w = W*fr[1];
+        var yTop = Hh - sp[1]*fh + fh*0.2, yBot = Hh - (sp[0] - 1)*fh - fh*0.2;
+        g.fillStyle = PAL.caqui; g.fillRect(x, yTop, w, yBot - yTop);
+        g.fillStyle = PAL.parede; g.fillRect(x + w*0.17, yTop + w*0.17, w*0.66, (yBot - yTop) - w*0.34);
+        g.fillStyle = 'rgba(0,0,0,.10)'; g.fillRect(x, yTop, w, 3);
+      });
+    });
+    for (var f2 = 0; f2 < NF; f2++){
+      var yy = Hh - (f2 + 1)*fh;
+      g.fillStyle = 'rgba(120,108,88,.09)'; g.fillRect(0, yy, W, 2);
+      [0.345, 0.545].forEach(function(px){
+        janela(g, W*px, yy + fh*0.3, W*0.11, fh*0.38, false);
+      });
+    }
+  }
+  return c;
+}
+/* copa de árvore pintada, usada como sprite: muito melhor que esfera a distância */
+function copaCanvas(tipo){
+  var c = document.createElement('canvas'); c.width = c.height = 128;
+  var g = c.getContext('2d');
+  function folha(cx, cy, r, cor){
+    var gr = g.createRadialGradient(cx - r*0.3, cy - r*0.35, r*0.1, cx, cy, r);
+    gr.addColorStop(0, cor[0]); gr.addColorStop(.65, cor[1]); gr.addColorStop(1, cor[2]);
+    g.fillStyle = gr; g.beginPath(); g.arc(cx, cy, r, 0, Math.PI*2); g.fill();
+  }
+  if (tipo === 'palm'){
+    g.strokeStyle = '#4C7A33'; g.lineCap = 'round';
+    for (var i = 0; i < 9; i++){
+      var a = -Math.PI/2 + (i - 4)*0.36;
+      g.lineWidth = 9 - Math.abs(i - 4)*0.8;
+      g.beginPath(); g.moveTo(64, 92);
+      g.quadraticCurveTo(64 + Math.cos(a)*46, 92 + Math.sin(a)*46, 64 + Math.cos(a)*74, 92 + Math.sin(a)*40 + 26);
+      g.strokeStyle = i % 2 ? '#3F6B2A' : '#548437'; g.stroke();
+    }
+    folha(64, 90, 10, ['#6B8F45','#4F7132','#3C5726']);
+  } else {
+    folha(50, 70, 30, ['#7FA24F','#55803A','#3D5F2A']);
+    folha(80, 62, 28, ['#89AB58','#5C8740','#41642C']);
+    folha(64, 42, 26, ['#93B263','#638E45','#456A2F']);
+    folha(66, 86, 24, ['#6E9243','#4C7634','#375326']);
+  }
+  return c;
+}
+
+function initSun(){
+  var view = document.getElementById('sunView');
+  var canvas = document.getElementById('sun3d');
+  var loadMsg = document.getElementById('sunLoad');
+  var fail = function(){
+    canvas.remove(); loadMsg.classList.add('done');
+    var d = document.createElement('div'); d.className = 'sun-fallback';
+    d.textContent = 'A simulação 3D não carregou neste aparelho. A implantação do condomínio está mais abaixo, na seção de lazer.';
+    view.appendChild(d);
+    document.getElementById('stH').textContent = 'Simulação indisponível';
+  };
+  if (!window.THREE || !THREE.OrbitControls){ fail(); return; }
+  var renderer;
+  try { renderer = new THREE.WebGLRenderer({canvas:canvas, antialias:true, alpha:true}); } catch(e){ fail(); return; }
+  renderer.setClearColor(0x000000, 0);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  var maxAniso = Math.min(8, renderer.capabilities.getMaxAnisotropy());
+
+  var scene = new THREE.Scene();
+  scene.fog = new THREE.Fog(0xe4edf2, 360, 1150);
+
+  var camera = new THREE.PerspectiveCamera(36, 1, 1, 4000);
+  camera.position.set(78, 128, -196);
+  var controls = new THREE.OrbitControls(camera, canvas);
+  controls.target.set(-2, 8, 6);
+  controls.enablePan = false;
+  controls.minDistance = 80; controls.maxDistance = 420;
+  controls.maxPolarAngle = Math.PI*0.47;
+  controls.update();
+
+  var hemi = new THREE.HemisphereLight(0xd6e6f4, 0xb3aa98, 0.62); scene.add(hemi);
+  var fill = new THREE.DirectionalLight(0xe6eef6, 0.3); fill.position.set(-140, 110, -150); scene.add(fill);
+  var sun = new THREE.DirectionalLight(0xfff2dc, 0.7);
+  sun.castShadow = true;
+  var ms = Math.min(screen.width || 1024, screen.height || 1024) >= 700 ? 4096 : 2048;
+  sun.shadow.mapSize.set(ms, ms);
+  var sc = sun.shadow.camera; sc.left = -190; sc.right = 190; sc.top = 190; sc.bottom = -190; sc.near = 10; sc.far = 1200;
+  sun.shadow.bias = -0.0005; sun.shadow.normalBias = 0.04;
+  scene.add(sun); scene.add(sun.target);
+  var sunBall = new THREE.Mesh(new THREE.SphereGeometry(5, 20, 14), new THREE.MeshBasicMaterial({color:0xffd27a, fog:false}));
+  scene.add(sunBall);
+
+  /* base clara sem iluminação, com as sombras desenhadas por cima: leitura de maquete em qualquer hora */
+  var groundMat = new THREE.MeshBasicMaterial({color:0xeeece6});
+  var ground = new THREE.Mesh(new THREE.CircleGeometry(1800, 72), groundMat);
+  ground.rotation.x = -Math.PI/2; scene.add(ground);
+  var groundSh = new THREE.Mesh(new THREE.CircleGeometry(1800, 72), new THREE.ShadowMaterial({opacity:.26}));
+  groundSh.rotation.x = -Math.PI/2; groundSh.position.y = 0.02; groundSh.receiveShadow = true; scene.add(groundSh);
+
+  var site = new THREE.Group(); site.rotation.y = -8*Math.PI/180; scene.add(site);
+  var S = 0.18, OX = 340, OY = 560;
+  var P = function(x, y){ return [(x-OX)*S, (y-OY)*S]; };
+
+  /* chão com a implantação colorida da MRV */
+  var shp = new THREE.Shape();
+  OUTLINE.forEach(function(p, i){ var q = P(p[0], p[1]); if (i) shp.lineTo(q[0], -q[1]); else shp.moveTo(q[0], -q[1]); });
+  var geo = new THREE.ShapeGeometry(shp);
+  var pos = geo.attributes.position, uv = geo.attributes.uv;
+  for (var i = 0; i < pos.count; i++){
+    var dx = pos.getX(i)/S + OX, dy = -pos.getY(i)/S + OY;
+    uv.setXY(i, (dx - IMGBOX.x)/IMGBOX.w, 1 - (dy - IMGBOX.y)/IMGBOX.h);
+  }
+  uv.needsUpdate = true;
+  var siteMat = new THREE.MeshBasicMaterial({color:0xcfcabd});
+  var siteM = new THREE.Mesh(geo, siteMat);
+  siteM.rotation.x = -Math.PI/2; siteM.position.y = 0.05; site.add(siteM);
+  var siteSh = new THREE.Mesh(geo, new THREE.ShadowMaterial({opacity:.34}));
+  siteSh.rotation.x = -Math.PI/2; siteSh.position.y = 0.1; siteSh.receiveShadow = true; site.add(siteSh);
+  var texReady = false;
+  new THREE.TextureLoader().load('img/chao-implantacao.jpg', function(tex){
+    tex.anisotropy = maxAniso;
+    siteMat.map = tex; texReady = true; siteMat.needsUpdate = true; update(false);
+    loadMsg.classList.add('done'); render();
+  }, undefined, function(){ loadMsg.classList.add('done'); });
+
+  /* torres com fachada */
+  var H = 50;
+  var texLong = new THREE.CanvasTexture(facadeCanvas('long')); texLong.anisotropy = maxAniso;
+  var texShort = new THREE.CanvasTexture(facadeCanvas('short')); texShort.anisotropy = maxAniso;
+  var mLong = new THREE.MeshStandardMaterial({map:texLong, roughness:.92, metalness:0});
+  var mShort = new THREE.MeshStandardMaterial({map:texShort, roughness:.92, metalness:0});
+  var mRoof = new THREE.MeshStandardMaterial({color:0xcfc9bd, roughness:.95, metalness:0});
+  var mWhite = new THREE.MeshStandardMaterial({color:0xefece4, roughness:.9, metalness:0});
+  var mFlatRoof = new THREE.MeshStandardMaterial({color:0xd8d2c6, roughness:.95, metalness:0});
+
+  var blockers = [];
+  function tower(x1, y1, x2, y2){
+    var a = P(x1, y1), b = P(x2, y2), w = b[0]-a[0], d = b[1]-a[1];
+    var m = new THREE.Mesh(new THREE.BoxGeometry(w, H, d), [mLong, mLong, mRoof, mRoof, mShort, mShort]);
+    m.position.set(a[0]+w/2, H/2, a[1]+d/2); m.castShadow = true; m.receiveShadow = true;
+    m.userData = {w:w, d:d, h:H}; site.add(m); blockers.push(m);
+    var tank = new THREE.Mesh(new THREE.BoxGeometry(6, 3.2, 8), mFlatRoof);
+    tank.position.set(m.position.x, H + 1.6, m.position.z); tank.castShadow = true; site.add(tank);
+    var plat = new THREE.Mesh(new THREE.BoxGeometry(w + 0.5, 1.1, d + 0.5), mRoof);
+    plat.position.set(m.position.x, H + 0.55, m.position.z); plat.castShadow = true; plat.receiveShadow = true; site.add(plat);
+    var base = new THREE.Mesh(new THREE.BoxGeometry(w + 0.7, 2.6, d + 0.7), mWhite);
+    base.position.set(m.position.x, 1.3, m.position.z); base.castShadow = true; base.receiveShadow = true; site.add(base);
+    return m;
+  }
+  function block(x1, y1, x2, y2, h){
+    var a = P(x1, y1), b = P(x2, y2), w = b[0]-a[0], d = b[1]-a[1];
+    var m = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), [mWhite, mWhite, mFlatRoof, mFlatRoof, mWhite, mWhite]);
+    m.position.set(a[0]+w/2, h/2, a[1]+d/2); m.castShadow = true; m.receiveShadow = true;
+    site.add(m); blockers.push(m); return m;
+  }
+  /* footprints medidos sobre a implantação do material */
+  var towers = {
+    '3': tower(106, 497, 166, 752),
+    '2': tower(273, 497, 334, 752),
+    '1': tower(453, 495, 513, 749)
+  };
+  block(270, 322, 345, 393, 4.2);
+  block(428, 318, 500, 388, 3.6);
+
+  /* muro do terreno, com abertura na portaria */
+  var wallM = new THREE.MeshStandardMaterial({color:0xe6DFCD, roughness:.95, metalness:0});
+  for (var k = 0; k < LOT.length; k++){
+    var A = LOT[k], B = LOT[(k+1) % LOT.length];
+    if (A[0] === 351 && B[0] === 408) continue;
+    var p = P(A[0], A[1]), q = P(B[0], B[1]), ddx = q[0]-p[0], ddz = q[1]-p[1], L = Math.sqrt(ddx*ddx + ddz*ddz);
+    var wm = new THREE.Mesh(new THREE.BoxGeometry(L, 2.2, 0.35), wallM);
+    wm.position.set((p[0]+q[0])/2, 1.1, (p[1]+q[1])/2); wm.rotation.y = -Math.atan2(ddz, ddx);
+    wm.castShadow = true; wm.receiveShadow = true; site.add(wm);
+  }
+
+  /* árvores e palmeiras */
+  var nPalm = TREES.filter(function(t){ return t[2] === 1; }).length, nRound = TREES.length - nPalm;
+  var trunkG = new THREE.CylinderGeometry(0.14, 0.24, 1, 6); trunkG.translate(0, 0.5, 0);
+  var trunks = new THREE.InstancedMesh(trunkG, new THREE.MeshStandardMaterial({color:0x8a7a63, roughness:1}), TREES.length);
+  var mtx = new THREE.Matrix4(), qt = new THREE.Quaternion(), sv = new THREE.Vector3(), pv = new THREE.Vector3();
+  var texPalm = new THREE.CanvasTexture(copaCanvas('palm'));
+  var texCopa = new THREE.CanvasTexture(copaCanvas('round'));
+  [texPalm, texCopa].forEach(function(t){ t.anisotropy = maxAniso; });
+  var matPalm = new THREE.SpriteMaterial({map:texPalm, transparent:true});
+  var matCopa = new THREE.SpriteMaterial({map:texCopa, transparent:true});
+  /* sombra simples no chão, já que sprite não projeta sombra */
+  var discoG = new THREE.CircleGeometry(1, 14); discoG.rotateX(-Math.PI/2);
+  var discos = new THREE.InstancedMesh(discoG, new THREE.MeshBasicMaterial({color:0x000000, transparent:true, opacity:.1}), TREES.length);
+  TREES.forEach(function(t, n){
+    var p2 = P(t[0], t[1]), palm = t[2] === 1;
+    var h = palm ? 7 + (n % 5)*0.8 : 3.6 + (n % 4)*0.5;
+    qt.identity(); sv.set(1, h, 1); pv.set(p2[0], 0, p2[1]); mtx.compose(pv, qt, sv); trunks.setMatrixAt(n, mtx);
+    var r = palm ? 5.4 + (n % 3)*0.5 : 4.4 + (n % 4)*0.6;
+    var sp = new THREE.Sprite(palm ? matPalm : matCopa);
+    sp.scale.set(r, r, 1); sp.position.set(p2[0], h + r*0.33, p2[1]); site.add(sp);
+    sv.set(r*0.42, 1, r*0.42); pv.set(p2[0], 0.22, p2[1]); mtx.compose(pv, qt, sv); discos.setMatrixAt(n, mtx);
+  });
+  trunks.castShadow = true; trunks.instanceMatrix.needsUpdate = true; site.add(trunks);
+  discos.instanceMatrix.needsUpdate = true; site.add(discos);
+
+  function label(text, x, y, z, parent){
+    var c = document.createElement('canvas'); c.width = 256; c.height = 72;
+    var g = c.getContext('2d');
+    g.fillStyle = 'rgba(23,21,15,.82)'; g.beginPath();
+    if (g.roundRect) g.roundRect(8, 10, 240, 52, 10); else g.rect(8, 10, 240, 52);
+    g.fill();
+    g.fillStyle = '#F1EDE4'; g.font = '600 30px "Instrument Sans", Arial, sans-serif'; g.textAlign = 'center'; g.textBaseline = 'middle';
+    g.fillText(text, 128, 37);
+    var tex = new THREE.CanvasTexture(c);
+    var sp = new THREE.Sprite(new THREE.SpriteMaterial({map:tex, depthTest:false, fog:false}));
+    sp.scale.set(24, 6.75, 1); sp.position.set(x, y, z); sp.renderOrder = 10; (parent || scene).add(sp); return sp;
+  }
+  Object.keys(towers).forEach(function(k){ var t = towers[k]; label('Torre ' + k, t.position.x, H + 11, t.position.z, site); });
+  var pq = P(170, 360); label('Piscinas', pq[0], 9, pq[1], site);
+
+  var arrow = new THREE.Shape(); arrow.moveTo(0, 12); arrow.lineTo(5, -5); arrow.lineTo(0, -1.5); arrow.lineTo(-5, -5); arrow.lineTo(0, 12);
+  var am = new THREE.Mesh(new THREE.ShapeGeometry(arrow), new THREE.MeshBasicMaterial({color:0x17150f}));
+  am.rotation.x = -Math.PI/2; am.position.set(-74, 0.3, -30); scene.add(am);
+  var nc = document.createElement('canvas'); nc.width = nc.height = 64; var ng = nc.getContext('2d');
+  ng.fillStyle = 'rgba(23,21,15,.85)'; ng.beginPath(); ng.arc(32, 32, 28, 0, Math.PI*2); ng.fill();
+  ng.fillStyle = '#F1EDE4'; ng.font = '700 32px Archivo, Arial, sans-serif'; ng.textAlign = 'center'; ng.textBaseline = 'middle'; ng.fillText('N', 32, 34);
+  var ns = new THREE.Sprite(new THREE.SpriteMaterial({map:new THREE.CanvasTexture(nc), depthTest:false, fog:false}));
+  ns.scale.set(7, 7, 1); ns.position.set(-74, 7, -44); ns.renderOrder = 10; scene.add(ns);
+
+  var band = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.MeshBasicMaterial({color:0xf0c06a, transparent:true, opacity:.88}));
+  band.receiveShadow = true; site.add(band);
+
+  /* etiqueta que marca o andar escolhido na fachada */
+  var selC = document.createElement('canvas'); selC.width = 256; selC.height = 72;
+  var selG = selC.getContext('2d');
+  var selTex = new THREE.CanvasTexture(selC);
+  var selLbl = new THREE.Sprite(new THREE.SpriteMaterial({map:selTex, depthTest:false, fog:false}));
+  selLbl.scale.set(24, 6.75, 1); selLbl.renderOrder = 11; site.add(selLbl);
+  var selTxt = '';
+  function setSel(text){
+    if (text === selTxt) return;
+    selTxt = text;
+    selG.clearRect(0, 0, 256, 72);
+    selG.fillStyle = 'rgba(178,144,79,.96)'; selG.beginPath();
+    if (selG.roundRect) selG.roundRect(8, 10, 240, 52, 10); else selG.rect(8, 10, 240, 52);
+    selG.fill();
+    selG.fillStyle = '#1B1508'; selG.font = '700 30px "Instrument Sans", Arial, sans-serif';
+    selG.textAlign = 'center'; selG.textBaseline = 'middle';
+    selG.fillText(text, 128, 37);
+    selTex.needsUpdate = true;
+  }
+
+  function placeBand(){
+    var t = towers[torre], u = t.userData, b = faixaAndar(), fh = H/17;
+    var y0 = b[0]*fh, y1 = b[1]*fh, sgn = state.side === 'L' ? 1 : -1;
+    band.scale.set(u.d, y1 - y0, 1);
+    band.position.set(t.position.x + sgn*(u.w/2 + 0.08), (y0 + y1)/2, t.position.z);
+    band.rotation.set(0, sgn*Math.PI/2, 0);
+    setSel(andar + 'º andar');
+    selLbl.position.set(t.position.x + sgn*(u.w/2 + 15), (y0 + y1)/2 + 1, t.position.z);
+  }
+
+  var ray = new THREE.Raycaster();
+  var tmpN = new THREE.Vector3(), tmpP = new THREE.Vector3();
+  function litFraction(dir, el){
+    if (el <= 0.0) return {f:0, why:'night'};
+    var t = towers[torre], u = t.userData, b = faixaAndar(), fh = H/17, sgn = state.side === 'L' ? 1 : -1;
+    tmpN.set(sgn, 0, 0).applyQuaternion(site.quaternion);
+    if (tmpN.dot(dir) <= 0.03) return {f:0, why:'back'};
+    var others = blockers.filter(function(m){ return m !== t; });
+    var hits = 0, n = 0;
+    for (var i = 0; i < 8; i++){
+      for (var j = 0; j < 2; j++){
+        var z = t.position.z - u.d/2 + u.d*(i + 0.5)/8;
+        var y = (b[0] + (b[1]-b[0])*(j + 0.5)/2)*fh;
+        tmpP.set(t.position.x + sgn*(u.w/2 + 0.4), y, z);
+        site.localToWorld(tmpP);
+        ray.set(tmpP, dir); ray.far = 900;
+        if (ray.intersectObjects(others, false).length) hits++;
+        n++;
+      }
+    }
+    return {f:(n - hits)/n, why: hits ? 'shade' : 'sun'};
+  }
+  function dirOf(s){ return new THREE.Vector3(Math.sin(s.az)*Math.cos(s.el), Math.sin(s.el), -Math.cos(s.az)*Math.cos(s.el)).normalize(); }
+
+  /* céu e luz conforme a altura do sol */
+  var SKIES = [
+    { max:-2,  top:'#1B2633', hor:'#3D4957', fog:0x3d4957, sun:0xffffff },
+    { max:6,   top:'#8EA6C2', hor:'#F2D9B8', fog:0xf2d9b8, sun:0xffcf9a },
+    { max:18,  top:'#A2C1D9', hor:'#EEE8DC', fog:0xeee8dc, sun:0xffe6c2 },
+    { max:999, top:'#9DBFDA', hor:'#E4EDF2', fog:0xe4edf2, sun:0xfff4e0 }
+  ];
+  function setSky(elDeg){
+    var s = SKIES.filter(function(x){ return elDeg <= x.max; })[0];
+    view.style.background = 'linear-gradient(180deg,' + s.top + ' 0%,' + s.hor + ' 58%,' + s.hor + ' 100%)';
+    scene.fog.color.set(s.fog); sun.color.set(s.sun);
+  }
+
+  var stH = document.getElementById('stH'), stS = document.getElementById('stS'), stDay = document.getElementById('stDay');
+  var SEASON_TXT = { verao:'no verão', equi:'no outono e na primavera', inverno:'no inverno' };
+  var SIDE_TXT = { L:'lado leste', O:'lado oeste' };
+
+  function daySummary(){
+    var day = DAYS[state.season], spans = [], on = null, step = 0.25;
+    for (var t = 5; t <= 19.001; t += step){
+      var s = solar(day, t), r = litFraction(dirOf(s), s.el);
+      var lit = r.f >= 0.5;
+      if (lit && on === null) on = t;
+      if (!lit && on !== null){ spans.push([on, t]); on = null; }
+    }
+    if (on !== null) spans.push([on, 19]);
+    spans = spans.filter(function(sp){ return sp[1] - sp[0] >= 0.25; });
+    var total = spans.reduce(function(a, sp){ return a + sp[1] - sp[0]; }, 0);
+    if (!spans.length) return 'Nesse andar, esse lado não recebe sol direto na maior parte da fachada nesta estação.';
+    var txt = spans.map(function(sp){ return 'das ' + fmtH(Math.max(sp[0], 5)) + ' às ' + fmtH(sp[1]); }).join(' e ');
+    return 'Ao longo do dia: sol direto ' + txt + ', cerca de ' + (Math.round(total*2)/2).toString().replace('.', ',') + ' horas.';
+  }
+
+  function update(full){
+    var s = solar(DAYS[state.season], state.hour), d = dirOf(s);
+    sun.position.copy(d).multiplyScalar(420);
+    sunBall.position.copy(d).multiplyScalar(260);
+    sunBall.visible = s.el > 0;
+    var k = Math.max(0, Math.sin(s.el));
+    sun.intensity = s.el > 0 ? 0.42 + 0.5*Math.min(1, k*1.6) : 0;
+    hemi.intensity = s.el > 0 ? 0.62 + 0.1*Math.min(1, k*1.5) : 0.3;
+    var day = s.el > 0 ? 0.9 + 0.1*Math.min(1, k*2) : (s.el > -0.1 ? 0.72 : 0.48);
+    groundMat.color.setHex(0xeeece6).multiplyScalar(day);
+    if (texReady) siteMat.color.setScalar(day);
+    setSky(s.el*180/Math.PI);
+    placeBand();
+    var r = litFraction(d, s.el), pct = Math.round(r.f*100);
+    var where = 'Torre ' + torre + ', ' + andar + 'º andar, ' + SIDE_TXT[state.side];
+    if (r.why === 'night'){ stH.textContent = 'Sol abaixo do horizonte'; stS.textContent = 'Às ' + fmtH(state.hour) + ' ' + SEASON_TXT[state.season] + ', o sol ainda não nasceu ou já se pôs.'; }
+    else if (r.why === 'back'){ stH.textContent = 'Sol do outro lado'; stS.textContent = where + ': às ' + fmtH(state.hour) + ' o sol está batendo na fachada oposta.'; }
+    else if (pct >= 75){ stH.textContent = 'Sol direto'; stS.textContent = where + ': às ' + fmtH(state.hour) + ', ' + pct + '% da fachada recebe sol.'; }
+    else if (pct >= 25){ stH.textContent = 'Sol em parte da fachada'; stS.textContent = where + ': às ' + fmtH(state.hour) + ', ' + pct + '% recebe sol e o resto está na sombra de outro prédio.'; }
+    else { stH.textContent = 'Na sombra de outro prédio'; stS.textContent = where + ': às ' + fmtH(state.hour) + ', o sol está desse lado, mas outro prédio faz sombra.'; }
+    if (full !== false) stDay.textContent = daySummary();
+    render();
+  }
+
+  var baseOff = camera.position.clone().sub(controls.target), touched = false;
+  controls.addEventListener('start', function(){ touched = true; });
+  function resize(){
+    var w = view.clientWidth, h = view.clientHeight;
+    renderer.setSize(w, h, false); camera.aspect = w/h; camera.updateProjectionMatrix();
+    if (!touched){
+      var f = Math.max(1, Math.pow(1.25/camera.aspect, 1.3));
+      var off = camera.position.clone().sub(controls.target).setLength(baseOff.length()*f);
+      camera.position.copy(controls.target).add(off); controls.update();
+    }
+    render();
+  }
+  function render(){ renderer.render(scene, camera); }
+  controls.addEventListener('change', render);
+  window.addEventListener('resize', resize);
+
+  var hour = document.getElementById('hour'), hourOut = document.getElementById('hourOut');
+  hour.addEventListener('input', function(){ state.hour = parseFloat(hour.value); hourOut.textContent = fmtH(state.hour); update(false); });
+  segs('segSeason', 'season', function(){ update(); });
+  var tw = null;
+  function faceSide(){
+    var want = state.side === 'L' ? 1 : -1;
+    var off = camera.position.clone().sub(controls.target);
+    var th0 = Math.atan2(off.x, off.z);
+    if ((Math.sin(th0) >= 0 ? 1 : -1) === want) return;
+    var d = -2*th0; d = Math.atan2(Math.sin(d), Math.cos(d));
+    var rh = Math.sqrt(off.x*off.x + off.z*off.z), oy = off.y, t0 = performance.now(), dur = REDUCE ? 0 : 750;
+    if (tw) cancelAnimationFrame(tw);
+    (function step(now){
+      var u = dur ? Math.min(1, (now - t0)/dur) : 1; u = u < .5 ? 2*u*u : 1 - Math.pow(-2*u + 2, 2)/2;
+      var th = th0 + d*u;
+      camera.position.set(controls.target.x + rh*Math.sin(th), controls.target.y + oy, controls.target.z + rh*Math.cos(th));
+      controls.update(); render();
+      tw = u < 1 ? requestAnimationFrame(step) : null;
+    })(t0);
+  }
+  segs('segSide', 'side', function(){ faceSide(); update(); });
+  var solEsc = document.getElementById('solEsc');
+  sunSync = function(){
+    solEsc.textContent = 'Torre ' + torre + ' · ' + andar + 'º andar';
+    update();
+  };
+  resize(); sunSync();
+}
+initSun();
+})();
+</script>
